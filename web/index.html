@@ -1,0 +1,2366 @@
+<title>Sabiduría de Millonarios — Biblioteca de Estudio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:oklch(98% 0.003 270); --panel:oklch(100% 0 0);
+    --ink:oklch(16% 0.006 270); --muted:oklch(48% 0.012 270);
+    --line:oklch(89% 0.008 270); --line-soft:oklch(93% 0.01 270);
+    --brass:oklch(52% 0.2 285); --brass-soft:oklch(72% 0.15 285); --brass-wash:oklch(94% 0.045 285);
+    --accent-strong:oklch(38% 0.17 285);
+    --chip:oklch(93% 0.01 270); --chip-ink:oklch(42% 0.012 270);
+    --hero:oklch(95% 0.028 288); --hero-ink:oklch(22% 0.04 285); --hero-muted:oklch(46% 0.03 280);
+    --hero-eyebrow:oklch(52% 0.2 285); --hero-stat:oklch(50% 0.02 278); --hero-line:oklch(86% 0.02 282);
+    --hero-dot:oklch(55% 0.12 285 / .10); --hero-fade:transparent; --hero-glow:oklch(70% 0.18 288 / .26);
+    --shadow:0 1px 2px rgba(20,20,30,.05), 0 8px 28px rgba(20,20,30,.05);
+    --shadow-lift:0 10px 30px rgba(20,20,30,.12), 0 30px 60px rgba(20,20,30,.14);
+    --serif:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:oklch(20% 0.015 275); --panel:oklch(25% 0.018 275);
+      --ink:oklch(95% 0.005 270); --muted:oklch(72% 0.02 270);
+      --line:oklch(33% 0.02 275); --line-soft:oklch(30% 0.018 275);
+      --brass:oklch(76% 0.15 285); --brass-soft:oklch(60% 0.16 285); --brass-wash:oklch(32% 0.06 285);
+      --accent-strong:oklch(84% 0.12 285);
+      --chip:oklch(30% 0.02 275); --chip-ink:oklch(80% 0.03 280);
+      --hero:oklch(13% 0.012 275); --hero-ink:oklch(98% 0.005 270); --hero-muted:oklch(78% 0.01 270);
+      --hero-eyebrow:oklch(80% 0.13 285); --hero-stat:oklch(70% 0.02 270); --hero-line:oklch(32% 0.02 275);
+      --hero-dot:rgba(255,255,255,.06); --hero-fade:rgba(10,8,20,.30); --hero-glow:oklch(58% 0.2 285 / .30);
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+      --shadow-lift:0 8px 20px rgba(0,0,0,.5), 0 30px 70px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:oklch(98% 0.003 270); --panel:oklch(100% 0 0);
+    --ink:oklch(16% 0.006 270); --muted:oklch(48% 0.012 270);
+    --line:oklch(89% 0.008 270); --line-soft:oklch(93% 0.01 270);
+    --brass:oklch(52% 0.2 285); --brass-soft:oklch(72% 0.15 285); --brass-wash:oklch(94% 0.045 285);
+    --accent-strong:oklch(38% 0.17 285);
+    --chip:oklch(93% 0.01 270); --chip-ink:oklch(42% 0.012 270);
+    --hero:oklch(95% 0.028 288); --hero-ink:oklch(22% 0.04 285); --hero-muted:oklch(46% 0.03 280);
+    --hero-eyebrow:oklch(52% 0.2 285); --hero-stat:oklch(50% 0.02 278); --hero-line:oklch(86% 0.02 282);
+    --hero-dot:oklch(55% 0.12 285 / .10); --hero-fade:transparent; --hero-glow:oklch(70% 0.18 288 / .26);
+    --shadow:0 1px 2px rgba(20,20,30,.05), 0 8px 28px rgba(20,20,30,.05);
+    --shadow-lift:0 10px 30px rgba(20,20,30,.12), 0 30px 60px rgba(20,20,30,.14);
+  }
+  :root[data-theme="dark"]{
+    --bg:oklch(20% 0.015 275); --panel:oklch(25% 0.018 275);
+    --ink:oklch(95% 0.005 270); --muted:oklch(72% 0.02 270);
+    --line:oklch(33% 0.02 275); --line-soft:oklch(30% 0.018 275);
+    --brass:oklch(76% 0.15 285); --brass-soft:oklch(60% 0.16 285); --brass-wash:oklch(32% 0.06 285);
+    --accent-strong:oklch(84% 0.12 285);
+    --chip:oklch(30% 0.02 275); --chip-ink:oklch(80% 0.03 280);
+    --hero:oklch(13% 0.012 275); --hero-ink:oklch(98% 0.005 270); --hero-muted:oklch(78% 0.01 270);
+    --hero-eyebrow:oklch(80% 0.13 285); --hero-stat:oklch(70% 0.02 270); --hero-line:oklch(32% 0.02 275);
+    --hero-dot:rgba(255,255,255,.06); --hero-fade:rgba(10,8,20,.30); --hero-glow:oklch(58% 0.2 285 / .30);
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+    --shadow-lift:0 8px 20px rgba(0,0,0,.5), 0 30px 70px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:var(--hero);color:var(--hero-ink);
+    border-bottom:1px solid var(--line)}
+  .hero-glow{position:absolute;right:-60px;top:-90px;width:360px;height:360px;border-radius:50%;
+    background:var(--hero-glow);filter:blur(70px);pointer-events:none}
+  .hero-dots{position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(circle at 1px 1px,var(--hero-dot) 1px,transparent 0);
+    background-size:3px 3px}
+  .hero-fade{position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,var(--hero-fade),var(--hero) 84%)}
+  .masthead{position:relative;z-index:1;padding:84px 0 54px}
+  .mast-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--hero-eyebrow);font-weight:700;margin:0 0 14px}
+  h1{font-weight:800;font-size:clamp(32px,5.4vw,60px);line-height:1.02;margin:0;max-width:16ch;
+    text-wrap:balance;letter-spacing:-.03em;color:var(--hero-ink)}
+  .lede{color:var(--hero-muted);max-width:60ch;margin:18px 0 0;font-size:16.5px;line-height:1.55}
+  .stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:30px}
+  .stat b{font-weight:800;font-size:27px;color:var(--hero-ink);display:block}
+  .stat span{display:block;font-size:12px;letter-spacing:.04em;color:var(--hero-stat);
+    text-transform:uppercase}
+
+  /* Controls */
+  .controls{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0}
+  .searchrow{position:relative;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .search{flex:1;min-width:220px;display:flex;align-items:center;gap:9px;
+    background:var(--panel);border:1px solid var(--line);border-radius:11px;
+    padding:10px 14px;box-shadow:var(--shadow)}
+  .search input{border:0;outline:0;background:transparent;color:var(--ink);
+    font-size:15px;width:100%;font-family:var(--sans)}
+  .search svg{flex:none;color:var(--muted)}
+  .count{font-size:13px;color:var(--muted);white-space:nowrap;
+    font-variant-numeric:tabular-nums}
+  /* Filter dropdown + listbox */
+  .filter{position:static}
+  .filter-trigger{display:flex;align-items:center;gap:8px;background:var(--panel);
+    border:1px solid var(--line);border-radius:11px;padding:10px 14px;cursor:pointer;
+    font-size:14px;color:var(--ink);font-family:var(--sans);box-shadow:var(--shadow);white-space:nowrap}
+  .filter-trigger:hover{border-color:var(--brass-soft)}
+  .filter-trigger.active{border-color:var(--brass)}
+  .filter-trigger svg{color:var(--muted)}
+  .fbadge{background:var(--brass);border-radius:999px;font-size:11px;min-width:18px;height:18px;
+    display:inline-flex;align-items:center;justify-content:center;padding:0 5px;font-weight:700;color:#fff}
+  @media (prefers-color-scheme:dark){.fbadge{color:#161206}}
+  :root[data-theme="dark"] .fbadge{color:#161206}
+  :root[data-theme="light"] .fbadge{color:#fff}
+  .listbox{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:40;width:auto;
+    max-width:none;max-height:min(360px,60vh);overflow-y:auto;
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;box-shadow:var(--shadow-lift);padding:6px}
+  .lb-hint{font-size:11.5px;color:var(--muted);padding:6px 10px 8px;line-height:1.35;
+    border-bottom:1px solid var(--line-soft);margin-bottom:4px}
+  .opt{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;
+    font-size:14px;outline:none}
+  .opt:hover,.opt:focus-visible{background:var(--line-soft)}
+  .opt .box{flex:none;width:17px;height:17px;border:1.5px solid var(--line);border-radius:5px;
+    display:inline-flex;align-items:center;justify-content:center;transition:.12s;font-size:12px;line-height:1}
+  .opt.sel .box{background:var(--brass);border-color:var(--brass);color:#fff}
+  .opt.sel .box::after{content:"\2713"}
+  @media (prefers-color-scheme:dark){.opt.sel .box{color:#161206}}
+  :root[data-theme="dark"] .opt.sel .box{color:#161206}
+  :root[data-theme="light"] .opt.sel .box{color:#fff}
+  .opt-label{flex:1;text-transform:capitalize}
+  .opt-count{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+  .clear-opts{width:100%;margin-top:4px;border:0;background:none;color:var(--brass);
+    font-size:13px;cursor:pointer;padding:9px;border-radius:8px;font-family:var(--sans)}
+  .clear-opts:hover{background:var(--brass-wash)}
+
+  /* Grid */
+  main{padding:26px 0 70px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+  .card{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:16px;
+    padding:22px;cursor:pointer;transition:transform .16s,box-shadow .16s,border-color .16s;
+    box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px;text-align:left}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--brass-soft)}
+  .card:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .chead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .name{font-size:20px;font-weight:800;margin:0;line-height:1.15;letter-spacing:-.01em}
+  .role{color:var(--muted);font-size:13.5px;margin:3px 0 0}
+  .figure{flex:none;background:var(--brass-wash);color:var(--accent-strong);border-radius:9px;
+    padding:6px 9px;font-size:11.5px;font-weight:700;text-align:center;max-width:120px;line-height:1.25}
+  .quote{font-family:var(--serif);font-size:16.5px;line-height:1.5;margin:0;color:var(--ink)}
+  .quote::before{content:"\201C";color:var(--brass-soft);font-size:26px;line-height:0;
+    vertical-align:-6px;margin-right:2px}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+  .tag{background:var(--chip);color:var(--chip-ink);font-size:11.5px;padding:3px 9px;
+    border-radius:6px;letter-spacing:.02em}
+  .industry{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;
+    font-weight:600}
+
+  .empty{text-align:center;color:var(--muted);padding:60px 20px;font-size:15px}
+
+  /* Word cloud */
+  .cloud-sec{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .cloud-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+    flex-wrap:wrap;margin-bottom:14px}
+  .cloud-head h2{font-family:var(--serif);font-size:19px;margin:0;font-weight:600}
+  .cloud-head span{font-size:12.5px;color:var(--muted)}
+  .cloud-canvas{width:100%;height:360px;display:block}
+  @media (max-width:560px){.cloud-canvas{height:300px}}
+
+  /* Modal */
+  .overlay{position:fixed;inset:0;background:rgba(20,15,6,.5);backdrop-filter:blur(3px);
+    display:none;align-items:flex-start;justify-content:center;padding:5vh 18px;z-index:50;
+    overflow-y:auto}
+  .overlay.open{display:flex}
+  .modal{background:var(--panel);border:1px solid var(--line);border-radius:18px;
+    max-width:760px;width:100%;box-shadow:var(--shadow-lift);overflow:hidden;
+    animation:pop .2s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.modal{animation:none}.card{transition:none}}
+  .mhead{padding:26px 28px 20px;border-bottom:1px solid var(--line-soft);
+    background:var(--brass-wash)}
+  .mtop{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+  .mhead h2{font-size:28px;margin:0;font-weight:800;line-height:1.08;letter-spacing:-.01em}
+  .mhead .role{font-size:15px;margin-top:5px}
+  .mmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .mmeta .figure{max-width:none}
+  .close{flex:none;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+    width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:19px;line-height:1}
+  .close:hover{border-color:var(--brass)}
+  .mbody{padding:24px 28px 30px;max-height:60vh;overflow-y:auto}
+  .mbody h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);
+    margin:26px 0 12px;font-weight:700}
+  .mbody h3:first-child{margin-top:0}
+  .qlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+  .qlist li{font-family:var(--serif);font-size:18px;line-height:1.5;padding-left:16px;
+    border-left:2px solid var(--brass-soft)}
+  .transcript{background:var(--line-soft);border-radius:12px;padding:16px 18px;
+    font-size:14px;line-height:1.65;color:var(--muted);white-space:pre-wrap;max-height:none}
+  .iglink{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--brass);
+    font-weight:600;font-size:14px;text-decoration:none;border:1px solid
+    color-mix(in srgb,var(--brass) 35%,transparent);padding:9px 15px;border-radius:10px}
+  .iglink:hover{background:var(--brass-wash)}
+  .tagrow{display:flex;gap:6px;flex-wrap:wrap}
+
+  .themebtn{border:1px solid var(--hero-line);background:rgba(255,255,255,.06);color:var(--hero-ink);
+    border-radius:10px;width:38px;height:38px;cursor:pointer;font-size:16px;flex:none}
+  .themebtn:hover{border-color:var(--hero-eyebrow)}
+</style>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-fade"></div>
+  <div class="wrap masthead">
+    <div class="mast-top">
+      <div>
+        <p class="eyebrow">Colección personal de estudio · @theschoolofhardknockz</p>
+        <h1>La sabiduría de los que ya lo lograron</h1>
+        <p class="lede">Mi biblioteca personal para estudiar entrevistas a millonarios, atletas y
+          empresarios. Cada video está destilado en su cifra clave, sus frases de oro, sus temas y un
+          resumen — para poder buscar una idea, filtrar por tema y aprender rápido sin volver a ver
+          las horas de video. Uso privado: material recopilado solo para mi propio aprendizaje.</p>
+      </div>
+      <button class="themebtn" id="theme" title="Cambiar tema" aria-label="Cambiar tema">◐</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="s-count">8</b><span>Entrevistas</span></div>
+      <div class="stat"><b id="s-quotes">0</b><span>Frases clave</span></div>
+      <div class="stat"><b id="s-themes">0</b><span>Temas</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="searchrow">
+      <label class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="Busca una idea, persona o palabra… (ej. delegación, salud, fracaso)">
+      </label>
+      <div class="filter" id="filter">
+        <button class="filter-trigger" id="filterBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span>Temas</span>
+          <span class="fbadge" id="fbadge" hidden>0</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="listbox" id="listbox" role="listbox" aria-multiselectable="true" aria-label="Filtrar por tema" hidden></div>
+      </div>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="cloud-sec">
+    <div class="cloud-head">
+      <h2>Nube de palabras</h2>
+      <span id="cloud-note">según el filtro actual · clic en una palabra para buscarla</span>
+    </div>
+    <canvas class="cloud-canvas" id="cloud"></canvas>
+  </section>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden>Sin resultados. Prueba otra palabra o quita filtros.</div>
+</main>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+const DATA = [
+  {
+    "id": "DDfTYTnTreC",
+    "name": "Shaquille O'Neal",
+    "role": "Leyenda NBA · Inversor y franquiciado",
+    "figure": "155 franquicias Five Guys",
+    "industry": "Deporte · Inversión · Franquicias",
+    "tags": [
+      "delegación",
+      "mentalidad",
+      "aprender",
+      "preservar-riqueza",
+      "inversión"
+    ],
+    "quotes": [
+      "Si ves a alguien que lo hace mejor que tú, roba lo que hace. Robé a Michael Jordan, robé a Kareem, y me creé a mí mismo.",
+      "El secreto de escalar es una sola palabra: delegación. No puedo estar en 155 sitios a la vez, pero conozco a alguien que sí.",
+      "Para el que no tiene educación financiera: aprende esta palabra, «annuity» (renta vitalicia).",
+      "Bezos dijo: invierte en cosas que cambian la vida de la gente. Cambié toda mi estrategia de inversión."
+    ],
+    "mentions": [
+      "Jordan",
+      "Kareem",
+      "Bezos"
+    ],
+    "transcript": "Shaq explica cómo copió lo mejor de los grandes para construirse a sí mismo, por qué la delegación es la clave para escalar (llegó a tener 155 Five Guys), y cómo la educación financiera —empezando por entender las rentas vitalicias— evita que los atletas terminen en la ruina. Su filtro para invertir lo tomó de Bezos: apostar por lo que cambia la vida de la gente."
+  },
+  {
+    "id": "DM8O-IMghW8",
+    "name": "Tom Brady",
+    "role": "7× campeón de la Super Bowl",
+    "figure": "Elegido en el puesto 199 del draft",
+    "industry": "Deporte",
+    "tags": [
+      "responsabilidad",
+      "mentalidad",
+      "resiliencia",
+      "mentoría",
+      "familia"
+    ],
+    "quotes": [
+      "Deja de quejarte de lo que no recibes y preocúpate por lo que sí recibes. Si te dan tres oportunidades, aprovéchalas.",
+      "No dejes de pelear. Si te rindes, eres un perdedor de por vida.",
+      "La vida que llevas es la lección que enseñas. Sé la persona que quieres ver en el espejo cada día.",
+      "Tienes que salir de tu zona de confort, todo el tiempo."
+    ],
+    "mentions": [
+      "Bill Belichick"
+    ],
+    "transcript": "Brady recuerda el consejo de su psicólogo deportivo en la universidad —dejar de quejarse y aprovechar cada oportunidad—, la remontada del 28-3 en la Super Bowl 51, y cómo 32 equipos lo dudaron durante seis rondas del draft. Cierra con la lección de su padre: creer incondicionalmente en los suyos, y vivir con integridad porque tu vida es la lección que enseñas."
+  },
+  {
+    "id": "DOZD6tLjv5c",
+    "name": "Empresario anónimo",
+    "role": "Fundador en serie · Vendió dos empresas",
+    "figure": "$12 mil millones en exits combinados",
+    "industry": "Emprendimiento · Producto de consumo",
+    "tags": [
+      "emprendimiento",
+      "fracaso",
+      "apostar-por-ti",
+      "producto",
+      "innovación"
+    ],
+    "quotes": [
+      "Los primeros cinco años de un emprendedor son los años de supervivencia: cualquier día podrías quebrar.",
+      "Si construyes un producto que el consumidor demanda, no tienes que preocuparte por la distribución.",
+      "Si eres un verdadero emprendedor, no apuestas por otros: apuestas por ti mismo.",
+      "La gente loca cambia el mundo. No quiero que seas tan loco como yo, pero arriésgate un poco en la vida."
+    ],
+    "mentions": [
+      "Warren Buffett",
+      "Nike",
+      "Coca-Cola"
+    ],
+    "transcript": "Un fundador que vendió dos negocios por miles de millones explica por qué pasa más tiempo disuadiendo a la gente de emprender que animándola: los primeros cinco años son de pura supervivencia. Para él el producto lo es todo y la distribución es lo de menos —si el consumidor lo demanda, las cuentas te llamarán a ti—. No está satisfecho pese a sus exits: cuando el de arriba se acomoda, los emprendedores hambrientos se comen su almuerzo (señala a Nike como ejemplo de pérdida de innovación)."
+  },
+  {
+    "id": "DS0Qr7CDk7w",
+    "name": "Bobby",
+    "role": "Financiero de Hong Kong · IPOs (31 años)",
+    "figure": "£100 millones en un solo año",
+    "industry": "Finanzas · Salidas a bolsa",
+    "tags": [
+      "nicho",
+      "street-smarts",
+      "educación",
+      "familia",
+      "disciplina"
+    ],
+    "quotes": [
+      "La riqueza está en los nichos. Mi mercado es muy específico; somos poquísimos en el negocio.",
+      "Si solo eres listo de libros, probablemente termines trabajando para mí. El street smart se nace, no se finge.",
+      "No pregunto a nadie que trabaja para mí qué títulos tiene. No lo exijo.",
+      "Primero devuelvo a mi familia; luego me lo gasto en mí."
+    ],
+    "mentions": [],
+    "transcript": "Bobby, de 31 años y nacido en Hong Kong de familia pobre, ganó £100M en un año llevando empresas a bolsa. Su tesis: no hay blueprint que copiar, cada uno tiene su camino, y la riqueza está en los nichos donde hay poca competencia. Tiene doble titulación en economía y derecho pero insiste en que el «street smart» —que se nace, no se aprende— pesa más que los títulos. Compró dos coches de £2,5M al contado, pero primero devuelve a la familia."
+  },
+  {
+    "id": "DKAP1_DS4fA",
+    "name": "Tom Cruise",
+    "role": "Actor · Décadas en la cima",
+    "figure": "Referente de excelencia",
+    "industry": "Cine",
+    "tags": [
+      "excelencia",
+      "adaptabilidad",
+      "valentía",
+      "servicio",
+      "mentalidad"
+    ],
+    "quotes": [
+      "En un mundo que cambia, lo más importante es la propia capacidad de cambiar, adaptarse y aprender.",
+      "Siempre quise entender cómo hacer cualquier trabajo y hacerlo al nivel más alto posible.",
+      "No me importa tener miedo. Quiero una vida de aventura. No tengas tanto miedo de tener miedo.",
+      "Liderar es servir: no decirle a la gente qué hacer, sino ayudarla a ser mejor."
+    ],
+    "mentions": [],
+    "transcript": "Cruise atribuye su éxito al deseo de entregar siempre lo mejor y rodearse de gente con ese mismo cuidado. Aprendió pronto que en un mundo cambiante lo decisivo es la capacidad de adaptarse y aprender. No teme al miedo —persigue la aventura— y entiende el liderazgo como servicio: ayudar a otros a ser mejores, no vivir solo para sí mismo."
+  },
+  {
+    "id": "DIhHXaez-z5",
+    "name": "Bryan Johnson",
+    "role": "Fundador · Vendió Braintree/Venmo · Longevidad",
+    "figure": "Vendió su empresa por $800M",
+    "industry": "Fintech · Salud y longevidad",
+    "tags": [
+      "salud",
+      "longevidad",
+      "sueño",
+      "disciplina",
+      "prioridades"
+    ],
+    "quotes": [
+      "Un hombre rico quiere mil cosas; un hombre enfermo solo quiere una: su salud.",
+      "Haz de tu salud tu prioridad número uno en la vida. Incluso antes que tu empresa.",
+      "El sueño es tu prioridad número uno. Nada es más importante que dormir.",
+      "Cronológicamente tengo 47, pero mi capacidad cardiovascular y pulmonar es la de un chico de 18."
+    ],
+    "mentions": [],
+    "transcript": "Johnson vendió su empresa de pagos (detrás de Venmo) por $800M y hoy dedica su vida a frenar el envejecimiento. Su consejo número uno para emprendedores: hacer de la salud la prioridad máxima, por encima de la empresa, porque un cuerpo sano te hace mejor emprendedor. Sus tres pilares en orden: dormir bien, hacer ejercicio y comer bien. Dice tener la biología de un joven de 18 y no planear morir."
+  },
+  {
+    "id": "DTLh16nifN_",
+    "name": "Tony Robbins",
+    "role": "Coach e inversor · 114 empresas",
+    "figure": "114 empresas · $12 mil M/año",
+    "industry": "Coaching · Inversión",
+    "tags": [
+      "crear-valor",
+      "mentalidad",
+      "habilidades",
+      "marca-personal",
+      "resultados"
+    ],
+    "quotes": [
+      "Tu trabajo es simple: volverte más valioso. Haz más por los demás que nadie en el mercado.",
+      "La economía de la atención ya terminó. La gente se ahoga en información: está hambrienta de sabiduría.",
+      "No hay mejor herramienta de marketing que los resultados. Te darán fans incondicionales.",
+      "Tres habilidades: reconocer patrones, utilizar patrones y crear patrones. Ahí te vuelves el mejor de tu categoría."
+    ],
+    "mentions": [
+      "Jim Rohn"
+    ],
+    "transcript": "Robbins comparte el consejo que le dio Jim Rohn a los 17: no somos iguales en el mercado, así que tu trabajo es volverte más valioso haciendo más por los demás que nadie. Sostiene que la economía de la atención ya acabó —la gente está saturada de información y hambrienta de sabiduría— y que nada supera a los resultados como marketing. Su marco final: tres habilidades encadenadas —reconocer, utilizar y crear patrones— para convertirte en creador de tu propia vida."
+  },
+  {
+    "id": "DWoz2ldAgy5",
+    "name": "Empresario anónimo",
+    "role": "De la nada a millonario a los 29",
+    "figure": "Empezó con $300 · Millonario a los 29",
+    "industry": "Emprendimiento",
+    "tags": [
+      "fe",
+      "planificación",
+      "preparación",
+      "voluntad",
+      "mentalidad"
+    ],
+    "quotes": [
+      "La planificación adecuada evita un desempeño pésimo (proper planning prevents piss-poor performance).",
+      "Apuesto por la voluntad antes que por el CI cualquier día. Conozco a mucha gente lista y pobre.",
+      "Empecé mi primer negocio con $300. No necesitas mucho dinero para empezar.",
+      "La gente te lleva a sitios a los que el dinero no puede. Saca tu voluntad de la cercanía con la gente correcta."
+    ],
+    "mentions": [],
+    "transcript": "Criado por una madre que vendía cupones de comida, se hizo millonario a los 29 empezando un negocio con $300. Atribuye su rumbo a su fe y a un consejo que le marcó estando arruinado y deprimido: «la planificación adecuada evita un desempeño pésimo». Dejó la escuela en 10º grado pero apuesta por la fuerza de voluntad sobre el CI, y por rodearse de la gente correcta como fuente de energía y oportunidades."
+  },
+  {
+    "id": "DKXd9cmAHJ4",
+    "name": "Will Smith",
+    "role": "Actor y productor de Hollywood",
+    "figure": "Estrella global del cine",
+    "industry": "Cine · Entretenimiento",
+    "tags": [
+      "mentalidad",
+      "sufrimiento",
+      "confianza",
+      "consejos",
+      "autenticidad"
+    ],
+    "quotes": [
+      "Hay una cantidad de dinero que, una vez la superas, compra miseria en lugar de felicidad.",
+      "El sufrimiento es un regalo: el universo enseña a traves de la dificultad y los tiempos duros.",
+      "La confianza se construye sobre no tener miedo a parecer estupido.",
+      "Pedir consejo a alguien que no ha hecho lo que tu quieres hacer es casi una locura."
+    ],
+    "mentions": [
+      "Quincy Jones"
+    ],
+    "transcript": "Will Smith reflexiona sobre como el dinero no compra la felicidad y como el sufrimiento fue un maestro clave en su vida. Explica que la verdadera confianza nace de no temer al ridiculo y de dejar de escuchar consejos de quienes nunca lograron lo que tu persigues."
+  },
+  {
+    "id": "DPO3VMUjZcm",
+    "name": "Charlie Sheen",
+    "role": "Actor · Millonario a los 21",
+    "figure": "De los actores mejor pagados de la TV",
+    "industry": "Cine · Television · Entretenimiento",
+    "tags": [
+      "autocreencia",
+      "reinventarse",
+      "palabra",
+      "resiliencia",
+      "autocuidado"
+    ],
+    "quotes": [
+      "No dejes que otros cancelen tus suenos solo porque ellos nunca cumplieron los suyos.",
+      "Nunca es tarde para empezar de nuevo: Hollywood pudo apartarme, pero no pudo poner mi mente en pausa.",
+      "Pasa lo que pase, honra tu palabra, sobre todo las promesas que te haces a ti mismo.",
+      "Si trataras a tus amigos como te tratas a ti mismo, no te quedaria ni uno."
+    ],
+    "mentions": [],
+    "transcript": "Charlie Sheen cuenta que se hizo millonario a los 21 como actor y que su mayor motor fue creer en si mismo cuando nadie lo hacia. Tras sus altibajos publicos, defiende que nunca es tarde para reinventarse y que la clave es honrar la propia palabra y dejar de defraudarse a uno mismo."
+  },
+  {
+    "id": "DS-nukdCVEX",
+    "name": "Empresaria anonima",
+    "role": "Fundadora de marca de peluqueria · 40 y tantos anos",
+    "figure": "Construyo una empresa de 100 millones de dolares",
+    "industry": "Belleza · Emprendimiento",
+    "tags": [
+      "autocreencia",
+      "perseverancia",
+      "fracaso",
+      "proposito",
+      "bondad"
+    ],
+    "quotes": [
+      "Eres el unico que puede creer en ti mismo; si tu no lo haces, quien lo hara.",
+      "No te enfoques en el dinero primero, eso solo te entristece: enfocate en lo que haces bien y mejoralo, y el dinero llegara.",
+      "Cuando fracasas descubres lo que no te sirve, aprendes y lo vuelves a intentar; no descanses, pero no te detengas.",
+      "Manten la bondad: por dura que veas tu situacion, es tu momento de brillar y ponerte de pie."
+    ],
+    "mentions": [],
+    "transcript": "Una empresaria anonima de Hong Kong relata que se hizo millonaria a finales de sus 20 tras abandonar el instituto y fundar su propia marca de peluqueria, hoy valorada en 100 millones de dolares. Insiste en creer en uno mismo pese a las dudas ajenas, en no perseguir el dinero sino la excelencia, y en mantenerse amable y perseverante ante el fracaso."
+  },
+  {
+    "id": "DS5izL_ievb",
+    "name": "Justin Sun",
+    "role": "Fundador de blockchain · 34 anos · Multimillonario a los 25",
+    "figure": "Creo una de las mayores blockchains del mundo",
+    "industry": "Cripto · Blockchain · Tecnologia",
+    "tags": [
+      "cripto",
+      "inversión",
+      "emprendimiento",
+      "visión",
+      "futuro"
+    ],
+    "quotes": [
+      "Cripto y blockchain son el dinero de internet: la IA no entendera el dolar, entendera Bitcoin porque esta creado en lenguaje de maquina.",
+      "La razon por la que Warren Buffett me dijo que no invirtiera en Bitcoin es justo la razon por la que invierto en el.",
+      "Lo unico que comparten todos los multimillonarios es que todos tienen su propio negocio.",
+      "Si quieres entrar en cripto, el mejor momento es ahora."
+    ],
+    "mentions": [
+      "Warren Buffett",
+      "Tesla",
+      "Bitcoin"
+    ],
+    "transcript": "Justin Sun cuenta que se hizo multimillonario a los 25 tras construir una de las mayores blockchains del mundo y que pago 4,5 millones por almorzar con Warren Buffett. Defiende que Bitcoin sera la moneda del futuro entendida por la IA y que el rasgo comun de todos los ricos es tener su propio negocio."
+  },
+  {
+    "id": "DSdENGwDnJW",
+    "name": "Jake Paul",
+    "role": "Youtuber y boxeador · 28 anos · Millonario a los 20",
+    "figure": "Cerca de nueve cifras netas en un ano",
+    "industry": "Deporte · Creacion de contenido · Entretenimiento",
+    "tags": [
+      "mentalidad",
+      "fe",
+      "disciplina",
+      "miedo",
+      "criticas"
+    ],
+    "quotes": [
+      "Cuenta siempre el neto, no el bruto: este ano hice cerca de nueve cifras y eso es neto.",
+      "La vida consiste en temer algo y aun asi ir a por ello, salir de tu zona de confort; ahi esta el exito.",
+      "Cuando llega un pensamiento negativo lo veo como un coche pasando por la autopista: lo reconozco y lo dejo ir.",
+      "Son los perdedores los que intentan arrastrarte a su nivel; ningun triunfador te ha odiado jamas."
+    ],
+    "mentions": [
+      "Tom Cruise",
+      "Jesus"
+    ],
+    "transcript": "Jake Paul explica que se hizo millonario a los 20 con YouTube, patrocinios y merchandising, alcanzando casi nueve cifras netas en un ano. La vispera de una gran pelea, habla de gestionar el miedo mediante la fe, la visualizacion y la disciplina, e ignorar a quienes proyectan sus propias inseguridades."
+  },
+  {
+    "id": "DTGTSs4jkZh",
+    "name": "Inversor anonimo",
+    "role": "Inversor de private equity · 50 anos",
+    "figure": "Mas de 3 mil millones de dolares en un ano",
+    "industry": "Private equity · Inversion",
+    "tags": [
+      "seguimiento",
+      "relaciones",
+      "riesgo",
+      "humildad",
+      "inversión"
+    ],
+    "quotes": [
+      "Cuantas mas manos estrechas, mas dinero ganas.",
+      "Analizo mas de cien empresas al mes y solo invierto en unas cuatro: apuesto por la persona con la que hago negocios.",
+      "El mayor error de tus veinte es no atreverte a intentar tres o cuatro proyectos por miedo a fracasar.",
+      "Reparte cinco o diez cumplidos al dia, no te creas mejor que nadie y las bendiciones llegan cuando te mantienes humilde."
+    ],
+    "mentions": [],
+    "transcript": "Un inversor anonimo de private equity, con mas de 3 mil millones de dolares generados en un solo ano, atribuye su exito al poder de las relaciones y al dominio del seguimiento constante con clientes. Apuesta por las personas mas que por las cifras y aconseja arriesgarse en la juventud manteniendose siempre humilde."
+  },
+  {
+    "id": "DU1Fkj6CU_3",
+    "name": "Jordan Belfort",
+    "role": "El Lobo de Wall Street · Vendedor y formador",
+    "figure": "Gano 23 millones en efectivo en un solo dia",
+    "industry": "Ventas · Finanzas · Bolsa",
+    "tags": [
+      "ventas",
+      "visión",
+      "resiliencia",
+      "dinero",
+      "reclutamiento"
+    ],
+    "quotes": [
+      "No eres los errores de tu pasado, eres los recursos y las capacidades que sacaste de el.",
+      "Quien dice que el dinero es la raiz de todo mal es porque nunca lo tuvo; el dinero es como el alcohol, te amplifica, no te cambia.",
+      "Todo emprendedor tiene que ser vendedor: no solo vendes un producto, vendes una vision convincente.",
+      "El error del mal vendedor es empezar a vender el boligrafo; yo primero pregunto si de verdad lo necesitas."
+    ],
+    "mentions": [],
+    "transcript": "Jordan Belfort, el Lobo de Wall Street, recuerda haber ganado 23 millones en efectivo en un dia y comparte su filosofia sobre el dinero como amplificador del caracter. Defiende que todo emprendedor debe ser vendedor y que la clave real de vender es entender antes lo que el cliente quiere en lugar de lanzarse a colocar el producto."
+  },
+  {
+    "id": "DU6TJzrEnGO",
+    "name": "Empresario anonimo",
+    "role": "Emprendedor · Multimillonario a los 52",
+    "figure": "Mansion valorada en 175 millones de dolares",
+    "industry": "Emprendimiento · Inversion",
+    "tags": [
+      "disponibilidad",
+      "esfuerzo",
+      "envidia",
+      "resiliencia",
+      "escala"
+    ],
+    "quotes": [
+      "Cuesta el mismo esfuerzo ganar un dolar que ganar 10 o 100 millones: las reglas son las mismas.",
+      "Si quieres vivir con las clases altas, atiende a las masas; si atiendes solo a las clases, te quedas ahi.",
+      "El odio casi siempre es envidia, las dos peores letras del abecedario, la N y la V juntas.",
+      "Tienes que estar disponible: responder a la gente es una de las cosas mas infravaloradas que existen."
+    ],
+    "mentions": [],
+    "transcript": "Un empresario anonimo, hijo de un inmigrante cubano que fue indigente, cuenta que fue el primero de su familia en ir a la universidad y en hacerse millonario a los 25 y multimillonario a los 52, con una casa de 175 millones. Sostiene que resolver problemas grandes exige el mismo esfuerzo que los pequenos y que la disponibilidad y responder siempre a la gente es una ventaja infravalorada."
+  },
+  {
+    "id": "DUBZK4yAhQm",
+    "name": "Empresario anonimo",
+    "role": "Fundador de agencia de publicidad · Historia de inmigrante",
+    "figure": "Vendio su empresa por 200 millones y la recompro",
+    "industry": "Publicidad · Marketing · Tecnologia",
+    "tags": [
+      "emprendimiento",
+      "sacrificio",
+      "momentum",
+      "autocreencia",
+      "startup"
+    ],
+    "quotes": [
+      "Lo mas importante es no perder nunca el espiritu de fundador, eso que te hizo grande al principio.",
+      "Cuando alguien compra tu empresa suele arruinarla porque olvida lo mas crucial: las personas detras.",
+      "Hay que dirigir la compania como una startup sin importar su tamano.",
+      "El momentum se construye sobre el momentum: cada pequena victoria te dice que puedes ir a por la siguiente."
+    ],
+    "mentions": [
+      "Blackstone"
+    ],
+    "transcript": "Un empresario anonimo de origen inmigrante relata que fundo una agencia de publicidad desde su sotano y la vendio dos veces por unos 200 millones a Blackstone, para luego recomprarla. Insiste en conservar el espiritu de fundador, dirigir todo como una startup y en los seis o siete anos de sacrificio total que exigio construirla."
+  },
+  {
+    "id": "DUGpLtoDtMm",
+    "name": "Empresario anonimo",
+    "role": "Constructor de escuelas y desarrollador inmobiliario",
+    "figure": "150 millones de dolares al ano · 21 escuelas",
+    "industry": "Inmobiliaria · Educacion · Construccion",
+    "tags": [
+      "disciplina",
+      "paciencia",
+      "inmobiliaria",
+      "proposito",
+      "riqueza-generacional"
+    ],
+    "quotes": [
+      "Cada manana me rio porque mi vida no deberia haber salido asi, y luego enciendo el cerebro vikingo: si quiero comer hoy, tengo que salir a cazar.",
+      "Empece con una camioneta y una bolsa de herramientas en 1999, con 30 mil dolares prestados por mi padre.",
+      "En realidad no somos una constructora, somos una inmobiliaria: somos duenos de los edificios.",
+      "El toro joven quiere bajar corriendo; el viejo dice caminemos: en el sector inmobiliario, no vendas, aguanta."
+    ],
+    "mentions": [],
+    "transcript": "Un empresario anonimo cuenta que paso de mal estudiante a construir un imperio inmobiliario de escuelas concertadas, con 21 colegios y 10.000 ninos, facturando 150 millones al ano. Su modelo es ser dueno de los edificios y su gran leccion es la paciencia: en bienes raices no se vende, se aguanta para crear riqueza generacional."
+  },
+  {
+    "id": "DUOatvyDjw_",
+    "name": "Empresaria anonima",
+    "role": "Multimillonaria · Licencias de IP · Millonaria a los 28",
+    "figure": "80 millones de dolares en seis meses",
+    "industry": "Licencias de propiedad intelectual · Emprendimiento",
+    "tags": [
+      "emprendimiento",
+      "cashflow",
+      "entorno",
+      "deuda",
+      "fe"
+    ],
+    "quotes": [
+      "Empece con una deuda de 3 millones que herede, no en efectivo sino en deudas.",
+      "Para escapar del ciclo de la pobreza, hazte amigo de al menos una persona rica: los ricos quieren ensenarte como lo lograron.",
+      "Lo que cuenta no es la facturacion ni el beneficio, sino el dinero neto que te llevas al bolsillo tras impuestos.",
+      "No busques que todos te quieran: cuando triunfes tendras haters; solo necesitas complacer a Dios."
+    ],
+    "mentions": [],
+    "transcript": "Una empresaria anonima nacida en Tailandia y afincada en Monaco cuenta que heredo 3 millones en deudas y aun asi llego a multimillonaria con licencias de propiedad intelectual, llegando a ganar 80 millones en seis meses con mas de diez empresas. Su leccion clave es medir el negocio por el dividendo neto en el bolsillo y rodearse de gente rica que quiera ensenar."
+  },
+  {
+    "id": "DUTjYsFiTNd",
+    "name": "Ken",
+    "role": "Multimillonario · 69 anos · Ex piloto presidencial",
+    "figure": "Multimillonario con filosofia del 25x del gasto anual",
+    "industry": "Finanzas · Inversion",
+    "tags": [
+      "riqueza",
+      "familia",
+      "empatia",
+      "confianza",
+      "legado"
+    ],
+    "quotes": [
+      "Eres rico cuando tienes 25 veces tu gasto anual; lo correcto no es querer 10 millones, sino cuanto necesitas para vivir la vida que quieres.",
+      "Nos ensenaron a hablar de sexo pero no de dinero, y el dinero es mucho mas importante: muestra a tus hijos como lo haces.",
+      "Si empiezas una conversacion mostrando uno de tus defectos, le estas diciendo a la gente que confias en ella.",
+      "La clave del exito es la empatia: la gente no recuerda tu nombre, pero recuerda como los hiciste sentir."
+    ],
+    "mentions": [
+      "Bill Clinton"
+    ],
+    "transcript": "Ken, un multimillonario de 69 anos que fue piloto del presidente Clinton, explica su definicion de riqueza como 25 veces el gasto anual y la importancia de hablar abiertamente de dinero con la familia. Aconseja generar confianza mostrando los propios defectos y afirma que la clave del exito es la empatia, porque la gente recuerda como la hiciste sentir."
+  },
+  {
+    "id": "DU_T-DijmUx",
+    "name": "Empresario anónimo",
+    "role": "Fundador en serie e inversor · Multimillonario",
+    "figure": "Fundó 17 empresas y vendió 9",
+    "industry": "Emprendimiento · Lavado de autos · Inversión",
+    "tags": [
+      "delegación",
+      "lavado-autos",
+      "mentalidad",
+      "fe",
+      "escalar",
+      "preservar-riqueza"
+    ],
+    "quotes": [
+      "El lavado de autos es como un cajero automático legal: a prueba de recesiones y depresiones.",
+      "El secreto de escalar es contratar a los mejores y ayudarlos a hacerse ricos.",
+      "Los multimillonarios crean millonarios, pero jamás he visto a un multimillonario crear otro multimillonario.",
+      "Lo ruidoso es ser rico; la riqueza de verdad es silenciosa."
+    ],
+    "mentions": [
+      "Warren Buffett",
+      "Jesucristo"
+    ],
+    "transcript": "Un multimillonario anónimo cuenta que fundó 17 empresas y vendió 9, y que hoy apuesta por los lavados de autos como negocio a prueba de crisis. Insiste en que la clave para escalar es delegar en los mejores y en que la verdadera riqueza es discreta."
+  },
+  {
+    "id": "DUbabvAkn_H",
+    "name": "Franquiciado anónimo de McDonald's",
+    "role": "Franquiciado de McDonald's · Inmigrante jamaicano · 64 años",
+    "figure": "Dueño de 28 restaurantes McDonald's",
+    "industry": "Franquicias · Restauración · Bienes raíces",
+    "tags": [
+      "franquicias",
+      "crecimiento",
+      "bienes-raices",
+      "inmigrante",
+      "estructura-legal",
+      "fe"
+    ],
+    "quotes": [
+      "Cuando estás verde creces, cuando estás maduro te pudres; por eso mi palabra para 2026 es crecimiento.",
+      "El día que dejas de crecer es el día en que empiezas a morir en la rama.",
+      "El día que te sientes satisfecho es el día en que dejas de tener éxito.",
+      "McDonald's en realidad es una empresa de bienes raíces, y lo que le funciona a ellos me funciona a mí."
+    ],
+    "mentions": [
+      "McDonald's",
+      "Bizee"
+    ],
+    "transcript": "Un inmigrante jamaicano de 64 años relata cómo, sin venir de dinero, llegó a poseer 28 restaurantes McDonald's viviendo el sueño americano. Predica el crecimiento constante y la inversión en bienes raíces, y hasta su hija ya es franquiciada."
+  },
+  {
+    "id": "DUgeXV9Erh1",
+    "name": "Ala defensiva anónimo de la NFL",
+    "role": "Ala defensiva de los Cleveland Browns",
+    "figure": "Récord de capturas en una sola temporada",
+    "industry": "Deporte · Energía renovable · Inversión",
+    "tags": [
+      "nfl",
+      "mentalidad",
+      "disciplina",
+      "energia-renovable",
+      "fe",
+      "familia"
+    ],
+    "quotes": [
+      "Si quieres ser grande, no puedes hacer nada a medias: hay que darlo todo.",
+      "En el campo nunca sentí miedo; me repito que estoy preparado para todo y que soy el mejor del mundo.",
+      "Para construir riqueza generacional invierto en tecnología y energía renovable.",
+      "Cada captura la dedico a Dios: apunto al cielo y beso mi muñeca."
+    ],
+    "mentions": [
+      "Cleveland Browns",
+      "Jalen Brown"
+    ],
+    "transcript": "Un ala defensiva de los Cleveland Browns, dueño del récord de capturas en una temporada, cuenta que ganó más de 20 millones en un año y que quiere dar una vida mejor a su familia. Atribuye su éxito a la entrega total, la mentalidad ganadora y su fe, e invierte en energía renovable."
+  },
+  {
+    "id": "DUlk2rBibIL",
+    "name": "Dr. Forbes",
+    "role": "Empresaria de fitness y comunicadora · Casi 66 años",
+    "figure": "Vendió más de $2.5 mil millones en producto",
+    "industry": "Fitness · Ventas · Teletienda",
+    "tags": [
+      "ventas",
+      "persuasion",
+      "resiliencia",
+      "mentalidad",
+      "fitness",
+      "reinvencion"
+    ],
+    "quotes": [
+      "He vendido más de 2.500 millones de dólares en producto dominando la comunicación por audio.",
+      "Lo mejor que puedes hacer en la vida es tocar fondo para impulsarte de nuevo hacia arriba.",
+      "No pidas permiso, pide perdón: a veces las reglas no funcionan para ti, rómpelas y descúbrelo.",
+      "Se burlaron de mí en televisión y dijeron que mi producto nunca funcionaría; llegué a vender un millón al día."
+    ],
+    "mentions": [
+      "Forbes"
+    ],
+    "transcript": "La Dr. Forbes explica cómo, partiendo de la pobreza absoluta, creó un producto de fitness y vendió más de 2.500 millones dominando la persuasión y la teletienda. A punto de cumplir 66 años, defiende tocar fondo para rebotar y romper las reglas para triunfar."
+  },
+  {
+    "id": "DUtSCiDDtAh",
+    "name": "Inversor anónimo de capital privado",
+    "role": "Inversor de capital privado · 82 años",
+    "figure": "Entre los ~5000 con más de $500M de patrimonio",
+    "industry": "Capital privado · Adquisición de empresas",
+    "tags": [
+      "capital-privado",
+      "visión",
+      "mentalidad",
+      "perseverancia",
+      "fe",
+      "origenes-humildes"
+    ],
+    "quotes": [
+      "Los más ricos van con todo a una o dos cosas, no a una cartera diversificada.",
+      "A los 12 años no pensaba en la montaña rusa de Disney: yo quería ser el dueño y cobrar a toda esa gente en la fila.",
+      "Dios manda a los 8 mil millones de personas por la línea y a cada uno le da piezas distintas.",
+      "Nunca te rindas: cualquiera puede rendirse, esa es la única habilidad que todos tenemos."
+    ],
+    "mentions": [
+      "Walt Disney"
+    ],
+    "transcript": "Un inversor de capital privado de 82 años, criado en la pobreza de Indiana, cuenta cómo compró y dirigió empresas hasta amasar una gran fortuna. Recuerda que ya de niño soñaba con ser dueño de Disney y no solo un visitante, y su lema es no rendirse jamás."
+  },
+  {
+    "id": "DV6a5HdjaOb",
+    "name": "Tim Tebow",
+    "role": "Exquarterback de la NFL · Activista contra la trata · 38 años",
+    "figure": "Millonario a los 22 en la NFL",
+    "industry": "Deporte · Activismo social · Fe",
+    "tags": [
+      "nfl",
+      "trata-personas",
+      "legado",
+      "fe",
+      "proposito",
+      "activismo"
+    ],
+    "quotes": [
+      "La mayor tragedia es tener éxito en todo lo que no importa.",
+      "Luchamos contra los peores males del mundo: la trata de personas y la explotación infantil.",
+      "La herencia es lo que dejas para alguien, pero el legado es lo que dejas dentro de alguien.",
+      "La religión es el hombre trabajando para llegar a Dios; el cristianismo es Dios bajando hasta nosotros."
+    ],
+    "mentions": [],
+    "transcript": "Tim Tebow, quarterback de la NFL que se hizo millonario a los 22, explica que hoy dedica su vida a combatir la trata y la explotación infantil. Sostiene que el verdadero éxito está en usar la vida para lo que importa y en dejar un legado, no solo una herencia."
+  },
+  {
+    "id": "DVEdNMLD4GA",
+    "name": "Jim Keyes",
+    "role": "Exdirector ejecutivo de 7-Eleven y Blockbuster",
+    "figure": "Vendió 7-Eleven por miles de millones",
+    "industry": "Retail · Entretenimiento · Liderazgo",
+    "tags": [
+      "liderazgo",
+      "flujo-caja",
+      "caracter",
+      "gestion",
+      "pivotar",
+      "principios"
+    ],
+    "quotes": [
+      "El flujo de caja es el oxígeno de cualquier negocio.",
+      "Sin comunicación el equipo no entiende hacia dónde vas y no puede ejecutar.",
+      "El carácter es lo que finalmente separa a un ganador de un perdedor en los momentos difíciles.",
+      "El libro que más me formó en los negocios fue el Manual de los Boy Scouts."
+    ],
+    "mentions": [
+      "Blockbuster",
+      "7-Eleven",
+      "Netflix",
+      "Google",
+      "YouTube"
+    ],
+    "transcript": "Jim Keyes, exdirector ejecutivo de 7-Eleven y luego de Blockbuster, cuenta que su fortuna vino de vender 7-Eleven por miles de millones. Explica que Blockbuster tenía contenido, exclusividad y un acuerdo con Google para vencer a Netflix, pero la crisis de 2008 lo hundió; resume el liderazgo en flujo de caja, comunicación y carácter."
+  },
+  {
+    "id": "DVRTpN0CcKm",
+    "name": "Magnate anónimo de telefonía móvil",
+    "role": "Empresario británico de telefonía móvil · Multimillonario",
+    "figure": "Vendió su empresa por $1.5 mil millones",
+    "industry": "Telefonía móvil · Retail · Filantropía",
+    "tags": [
+      "ventas",
+      "emprendimiento",
+      "impuestos",
+      "filantropía",
+      "competencia",
+      "trabajo-duro"
+    ],
+    "quotes": [
+      "Trabajé 22 horas al día y 20 años después vendí el negocio por 1.500 millones.",
+      "No llegas a donde estoy yo sin ser un gran vendedor.",
+      "Creo que debes pagar tus impuestos en el país donde ganaste tu dinero.",
+      "No me importa que mis hijos sean ricos: quiero que dejen el mundo mejor de como lo encontraron y sean felices."
+    ],
+    "mentions": [
+      "Monaco"
+    ],
+    "transcript": "Un magnate británico anónimo de la telefonía móvil relata cómo, sin venir de dinero, construyó un imperio de venta al por mayor y menor y lo vendió por 1.500 millones tras dos décadas trabajando sin descanso. Pagó 200 millones en impuestos por convicción y sueña con repartir riqueza entre los pobres."
+  },
+  {
+    "id": "DVZCNPRjtTX",
+    "name": "Empresario anónimo de la construcción",
+    "role": "Dueño de una gran constructora del sur de EE. UU. · Multimillonario",
+    "figure": "Ganó $200M en un solo año",
+    "industry": "Construcción · Servicios · Inversión",
+    "tags": [
+      "construccion",
+      "enfoque",
+      "personas",
+      "matrimonio",
+      "fe",
+      "resiliencia"
+    ],
+    "quotes": [
+      "Las personas más ricas no diversifican: concentran su cartera y van con todo a una o dos cosas.",
+      "Aposté todo por las personas: toda empresa está en el negocio de la gente y del servicio, lo sepa o no.",
+      "Una de las decisiones más importantes de tu vida es con quién te casas, porque marcará tu futuro.",
+      "Nunca le pongas límites a los sueños que Dios tiene para tu vida."
+    ],
+    "mentions": [],
+    "transcript": "Un empresario anónimo dueño de una de las mayores constructoras del sur de EE. UU. cuenta que llegó a ganar 200 millones en un año y viaja en un jet de 20 millones. Defiende concentrar las inversiones y apostar por las personas, y comparte cómo su fe lo sostuvo tras un divorcio en su peor momento."
+  },
+  {
+    "id": "DVeMkDYjjmu",
+    "name": "Operador anónimo de bonos",
+    "role": "Operador de bonos (bond trader)",
+    "figure": "Ganó $15M en un solo año",
+    "industry": "Finanzas · Trading · Inversión",
+    "tags": [
+      "inversión",
+      "sp500",
+      "confianza",
+      "interes-compuesto",
+      "largo-plazo",
+      "disciplina"
+    ],
+    "quotes": [
+      "Lo más importante fue la confianza: incluso en las malas semanas no podía esperar a volver al trabajo.",
+      "Compra el S&P 500, eso es todo lo que necesitas saber.",
+      "Invierte temprano, invierte con confianza y no especules.",
+      "El S&P 500 ha rendido un 10% anual en los últimos 100 años: el interés compuesto es real."
+    ],
+    "mentions": [
+      "S&P 500"
+    ],
+    "transcript": "Un operador de bonos anónimo cuenta que llegó a ganar 15 millones en un año partiendo de cero, y que la confianza fue su mayor activo. Su consejo para las nuevas generaciones es simple: invertir temprano en el S&P 500 y dejar que el interés compuesto haga el trabajo."
+  },
+  {
+    "id": "DVjWuz7jkef",
+    "name": "Empresario anónimo en serie",
+    "role": "Dueño de unos 16 negocios · 56 años · Multimillonario",
+    "figure": "$1.6 mil millones tras salir de $13M en deudas",
+    "industry": "Emprendimiento · Inversión · Multinegocio",
+    "tags": [
+      "emprendimiento",
+      "resiliencia",
+      "apalancamiento",
+      "estructura-legal",
+      "perseverancia",
+      "matrimonio"
+    ],
+    "quotes": [
+      "Estuve 13 millones en deuda con esposa y cuatro hijos, y lo pagué todo sin rendirme jamás.",
+      "Solo hay tres formas de hacerse rico: apalancar el tiempo y el dinero de otras personas.",
+      "Si trabajas para otro, estás vendiendo tu tiempo.",
+      "Soy el más feliz que he sido en toda mi vida."
+    ],
+    "mentions": [
+      "Bizee"
+    ],
+    "transcript": "Un empresario anónimo de 56 años, dueño de unos 16 negocios, cuenta que llegó a valer 1.600 millones tras haber estado 13 millones en deuda con su familia y no rendirse nunca. Su lección: hacerse rico apalancando el tiempo y el dinero de los demás en lugar de vender el propio."
+  },
+  {
+    "id": "DVq91cYDSlb",
+    "name": "Scooter Braun",
+    "role": "Mánager musical, empresario e inversor · 44 años",
+    "figure": "Vendió su empresa por más de $1 mil millones",
+    "industry": "Entretenimiento · Música · Inversión",
+    "tags": [
+      "musica",
+      "inversión",
+      "ego",
+      "descubrir-talento",
+      "mentalidad",
+      "familia"
+    ],
+    "quotes": [
+      "En 100 años nadie me recordará, así que a ti tampoco: no tengas ego.",
+      "Todo gran emprendedor que he conocido tiene una historia de gente que pensaba que estaba loco.",
+      "Cuando invierto miro los ojos del fundador y qué tan psicótico y obsesionado está.",
+      "Busco a quien quema las naves: sin retirada ni vuelta atrás."
+    ],
+    "mentions": [
+      "Jeff Bezos"
+    ],
+    "transcript": "Scooter Braun cuenta que vendió su empresa de la industria del entretenimiento por más de mil millones de dólares y que descubrió a algunos de los mayores artistas del mundo. Predica no tener ego y explica que al invertir busca fundadores obsesivos, dispuestos a quemar las naves."
+  },
+  {
+    "id": "DW6zHPpjmf1",
+    "name": "Cofundador de Home Depot",
+    "role": "Empresario minorista · 83 años",
+    "figure": "Empresa valorada en 350.000 millones de dólares",
+    "industry": "Retail · Emprendimiento",
+    "tags": [
+      "valores",
+      "atencion al cliente",
+      "confianza",
+      "mentalidad",
+      "liderazgo"
+    ],
+    "quotes": [
+      "Nunca se trato del dinero, sino de construir valores; ser multimillonario fue solo un subproducto.",
+      "Mi madre decia: haz lo correcto, por las razones correctas, y vive con las consecuencias.",
+      "El mayor exito es que tus clientes sean tan leales que se sientan traidores comprando en otro sitio.",
+      "Cuando construyes una relacion de confianza, la gente te abre el corazon, la mente y al final el bolsillo."
+    ],
+    "mentions": [
+      "Home Depot"
+    ],
+    "transcript": "El cofundador de Home Depot, de 83 anos, cuenta que vino de la nada, hijo de un farmaceutico que murio joven, y construyo una empresa valorada en 350.000 millones. Insiste en que el exito nace de los valores, de escuchar al cliente y de generar confianza, no de perseguir dinero."
+  },
+  {
+    "id": "DWEtSMWjVdX",
+    "name": "Alison y Stephen Ellsworth (Poppi)",
+    "role": "Fundadores de la bebida Poppi · matrimonio",
+    "figure": "Vendieron Poppi a Pepsi por casi 2.000 millones de dolares",
+    "industry": "Bebidas · Marketing",
+    "tags": [
+      "marca",
+      "pareja emprendedora",
+      "escalar",
+      "redes sociales",
+      "verguenza"
+    ],
+    "quotes": [
+      "No existe el equilibrio: hay hojas de calculo entre las sabanas; agotamos las tarjetas para sobrevivir.",
+      "Poppi es la bebida de mas rapido crecimiento de la historia: de cero a 500 millones en solo cinco anos.",
+      "Puedes tener un gran producto, pero si tu marca es mala, no vas a triunfar.",
+      "Me avergonce a mi misma una y otra vez hasta ganar confianza; ve y haz el ridiculo."
+    ],
+    "mentions": [
+      "Pepsi",
+      "Poppi",
+      "TikTok",
+      "Steve Jobs"
+    ],
+    "transcript": "Alison y Stephen Ellsworth, matrimonio y socios, fundaron la bebida Poppi y la vendieron a Pepsi por casi 2.000 millones tras crecer de cero a 500 millones en cinco anos. Lanzaron durante el COVID apoyandose en TikTok y defienden el compromiso total en pareja y perder el miedo al ridiculo."
+  },
+  {
+    "id": "DWMY0tQjTiX",
+    "name": "Fundador sudafricano de empresas de salud",
+    "role": "Empresario del sector salud · 50 años",
+    "figure": "Vendio su empresa por 460 millones de dolares",
+    "industry": "Salud · Emprendimiento",
+    "tags": [
+      "proposito",
+      "fe",
+      "aprendizaje continuo",
+      "humildad",
+      "familia"
+    ],
+    "quotes": [
+      "Entiende tu proposito dado por Dios y persiguelo con todo tu corazon.",
+      "A los 20 te preocupa lo que piensen de ti, a los 40 dejas de preocuparte, a los 60 entiendes que ni siquiera pensaban en ti.",
+      "Si tu equipo no esta usando IA, no es la persona adecuada.",
+      "Pensar que hice todo esto yo solo seria un enorme error: se lo debo todo a mi fe."
+    ],
+    "mentions": [
+      "Plaud AI",
+      "Biblia",
+      "Jesucristo"
+    ],
+    "transcript": "El padre del entrevistador, empresario sudafricano de la salud de 50 anos, vendio su compania por 460 millones. Habla del proposito, la fe cristiana como base de su vida, el habito de leer un libro por semana y el uso de IA en su negocio."
+  },
+  {
+    "id": "DWUKyI1DWxI",
+    "name": "Inmigrante de primera generacion · exmarine e inversor",
+    "role": "Empresario en serie · dueño de 120 empresas",
+    "figure": "Portafolio de 120 empresas y miles de millones facturados",
+    "industry": "Inversion · Emprendimiento",
+    "tags": [
+      "fe",
+      "inmigracion",
+      "emprendimiento",
+      "proposito",
+      "autenticidad"
+    ],
+    "quotes": [
+      "Llegue a este pais con cinco anos y sin nada; en una generacion mi familia vivio el sueno americano.",
+      "No puedes fracasar cuando sabes que esto es el plan de Dios.",
+      "El emprendimiento es alquimia moderna: tomas una idea que no existe y la haces real.",
+      "El mayor arrepentimiento de los moribundos es no haber tenido el valor de vivir una vida fiel a si mismos."
+    ],
+    "mentions": [
+      "El Alquimista"
+    ],
+    "transcript": "Inmigrante de primera generacion que llego con cinco anos, sirvio en los Marines y hoy posee 120 empresas con ingresos de miles de millones. Atribuye su exito a su fe, a cuestionar constantemente y a la idea de que emprender es alquimia moderna."
+  },
+  {
+    "id": "DWZUsZnDX8x",
+    "name": "Banquero de inversion britanico",
+    "role": "Banquero de inversion · 58 años",
+    "figure": "Hasta 30 millones de dolares ganados en un solo ano",
+    "industry": "Banca · Finanzas",
+    "tags": [
+      "apalancamiento",
+      "dinero",
+      "conocimiento",
+      "interes compuesto",
+      "inversión"
+    ],
+    "quotes": [
+      "Cada libra que depositas en el banco la presta nueve veces: ese es el multiplicador bancario.",
+      "El poder de la riqueza esta en el apalancamiento, y a mi nadie me lo enseno.",
+      "Puedes hacer muchos contactos, pero si no tienes sustancia detras, esos contactos no valen nada.",
+      "El interes compuesto te ayuda: cualquier inversion que hagas hoy la aprovecharan tus hijos."
+    ],
+    "mentions": [
+      "Banco de Inglaterra",
+      "reina de Inglaterra"
+    ],
+    "transcript": "Banquero de inversion britanico de 58 anos que ha llegado a ganar 30 millones en un ano. Explica el multiplicador bancario y el poder del apalancamiento, y sostiene que hoy importa mas lo que sabes que a quien conoces, junto con la fuerza del interes compuesto."
+  },
+  {
+    "id": "DW_8fUBja-h",
+    "name": "Emprendedor que fue indigente a los 15 · reformador educativo",
+    "role": "Empresario · 51 años",
+    "figure": "Vendio su empresa por 3.400 millones",
+    "industry": "Emprendimiento · Educacion",
+    "tags": [
+      "libertad financiera",
+      "deuda",
+      "proposito",
+      "equipos",
+      "educación"
+    ],
+    "quotes": [
+      "No queria ser emprendedor, necesitaba serlo; soy emprendedor porque no conseguia trabajo.",
+      "Cuando cobras un salario te atrapas como en una droga y empiezas a acumular deuda; con hipoteca, trabajas para el banco.",
+      "Si entendieras como funciona el dinero, por que venderias tu tiempo, que es limitado.",
+      "Tengo algo mejor que la felicidad: tengo un proposito, arreglar el sistema educativo que me fallo."
+    ],
+    "mentions": [],
+    "transcript": "Emprendedor de 51 anos que fue indigente a los 15 y vendio su empresa por 3.400 millones. Critica la trampa del salario y la deuda, defiende dejar de vender tiempo y trabajar en equipo, y dedica su proposito a reformar el sistema educativo que lo defraudo."
+  },
+  {
+    "id": "DWhCkRlAnE-",
+    "name": "Cofundador del Adam Smith Institute",
+    "role": "Economista y empresario · 86 años",
+    "figure": "Fundador de un influyente think tank economico",
+    "industry": "Economia · Emprendimiento",
+    "tags": [
+      "vender empresas",
+      "emprendimiento",
+      "libros",
+      "riqueza",
+      "legado"
+    ],
+    "quotes": [
+      "No te haces rico con un salario ni fundando un negocio: te haces rico vendiendo tu negocio.",
+      "Es mejor ser empresario que inversor: dependes de tus propias habilidades y no del azar.",
+      "Unete a una firma, aprende el oficio, monta tu propia version, hazla crecer unos anos y vendela por un multiplo.",
+      "Si cambias el mundo y mejoras la vida de otros para bien, te haras rico."
+    ],
+    "mentions": [
+      "Adam Smith",
+      "La riqueza de las naciones",
+      "Adam Smith Institute"
+    ],
+    "transcript": "Cofundador del Adam Smith Institute, de 86 anos, sostiene que la verdadera riqueza llega al vender una empresa despues de construirla en pocos anos. Recomienda leer La riqueza de las naciones y afirma que mejorar la vida de los demas es el camino a la fortuna."
+  },
+  {
+    "id": "DWzHyeGghLh",
+    "name": "Fundador de una gran empresa de fontaneria",
+    "role": "Empresario del norte de Inglaterra",
+    "figure": "Vendio su empresa de fontaneria por 4.100 millones de libras",
+    "industry": "Fontaneria · Emprendimiento",
+    "tags": [
+      "escalar",
+      "mentoría",
+      "internacionalizacion",
+      "oportunidad",
+      "disciplina"
+    ],
+    "quotes": [
+      "Lo grande fue conquistar America: los americanos compran a americanos, tienes que contratar a un americano.",
+      "Los emprendedores somos zorros: siempre buscamos la siguiente oportunidad.",
+      "Una lista de cosas que no debes hacer es mas importante que una lista de tareas pendientes.",
+      "El paso final para ganar mil millones es pulir tu caracter y hacer que ocurra."
+    ],
+    "mentions": [
+      "Google",
+      "Miami",
+      "America"
+    ],
+    "transcript": "Empresario del norte de Inglaterra que vendio una de las mayores empresas de fontaneria del mundo por 4.100 millones de libras tras conquistar el mercado estadounidense. Comparte nueve pasos para hacer mil millones, desde copiar y pivotar hasta contratar a tu reemplazo y pulir el caracter."
+  },
+  {
+    "id": "DX7L-qvCAhn",
+    "name": "Fundadora de marketplace de e-commerce",
+    "role": "Fundadora multimillonaria · empezo a los 18",
+    "figure": "Yate de mas de 40 millones de dolares",
+    "industry": "E-commerce · Emprendimiento",
+    "tags": [
+      "ahorro",
+      "bootstrapping",
+      "negociación",
+      "disciplina",
+      "tiempo"
+    ],
+    "quotes": [
+      "Nadie habla ya de ahorrar; no tuve ni anillo hasta poder guardar esa misma cantidad en el banco.",
+      "No te haras rico solo ahorrando, pero puedes ahorrar e invertir en ti mismo.",
+      "Arrancamos con las manos vacias, sin capital, contratando a mis amigos del colegio.",
+      "Mi superpoder negociando es estar dispuesta a marcharme y no mostrar cuanto deseo algo."
+    ],
+    "mentions": [
+      "Bizee"
+    ],
+    "transcript": "Fundadora de uno de los mayores marketplaces de e-commerce, propietaria de un yate de mas de 40 millones. Empezo a los 18 sin capital, arrancando su empresa por su cuenta, y defiende el ahorro, la inversion en uno mismo y saber retirarse en una negociacion."
+  },
+  {
+    "id": "DXFGWL4DgXx",
+    "name": "Exbaloncestista convertido en inversor inmobiliario",
+    "role": "Deportista e inversor inmobiliario · 45 años",
+    "figure": "Hasta 10 millones de dolares en un ano",
+    "industry": "Inmobiliario · Deporte",
+    "tags": [
+      "bienes raíces",
+      "ventas",
+      "intuicion",
+      "fe",
+      "riesgo"
+    ],
+    "quotes": [
+      "Jugue al baloncesto, tome mi dinero y me lance a los negocios.",
+      "La mejor inversion hoy son las viviendas multifamiliares: sacas mas rendimiento por tu dinero.",
+      "No todo el dinero es bueno; confia en tu instinto aunque en el papel parezca perfecto.",
+      "Toma un riesgo, salta del porche: sal del barco, Pedro, y camina sobre el agua."
+    ],
+    "mentions": [
+      "Jesucristo",
+      "Pedro"
+    ],
+    "transcript": "Exjugador de baloncesto de 45 anos que reinvirtio su dinero en negocios inmobiliarios y llego a ganar 10 millones en un ano. Recomienda invertir en viviendas multifamiliares, confiar en la intuicion ante el dinero dudoso y atreverse a arriesgar apoyado en su fe cristiana."
+  },
+  {
+    "id": "DXKR-pEjq5u",
+    "name": "Inversor que vendio cuatro empresas",
+    "role": "Empresario e inversor · mejor agenda de contactos de EE. UU.",
+    "figure": "Vendio cuatro empresas, una a Warren Buffett y otra a Coca-Cola",
+    "industry": "Inversion · Emprendimiento",
+    "tags": [
+      "riqueza a largo plazo",
+      "invertir en personas",
+      "hambre",
+      "salud",
+      "emprendimiento"
+    ],
+    "quotes": [
+      "Vendi cuatro empresas, una a Warren Buffett y otra a Coca-Cola; te haces rico despacio.",
+      "Ganaras veinte veces mas dinero en tus cuarenta que ahora.",
+      "Lo que busco al invertir es hambre: te vi ahi luchando, tu eres el plan de negocio.",
+      "Solo tenemos un trabajo: mantenernos sanos; si tienes salud tienes esperanza, y con esperanza lo tienes todo."
+    ],
+    "mentions": [
+      "Warren Buffett",
+      "Coca-Cola"
+    ],
+    "transcript": "Inversor veterano que vendio cuatro empresas, una a Warren Buffett y otra a Coca-Cola, y presume de la mejor agenda de contactos de Estados Unidos. Ensena que la riqueza llega despacio, que se invierte en el hambre de las personas y que el bien mas valioso es la salud."
+  },
+  {
+    "id": "DXPZa-9Atg4",
+    "name": "Empresaria y abogada (casi 50 años)",
+    "role": "Empresaria y abogada · casi 20 años en negocios",
+    "figure": "21 millones de seguidores",
+    "industry": "Negocios · Emprendimiento",
+    "tags": [
+      "emprendimiento",
+      "mentalidad",
+      "fe",
+      "consejos",
+      "matrimonio"
+    ],
+    "quotes": [
+      "Nunca aceptes consejos de alguien con quien no cambiarías tu cuenta bancaria.",
+      "Tú eres tu mayor inversión.",
+      "No puedes vender un sueño si te ves como una pesadilla.",
+      "Cuando te casas mal, al final te va a salir caro."
+    ],
+    "mentions": [
+      "Walmart",
+      "Cash App",
+      "Jesús"
+    ],
+    "transcript": "Una empresaria y abogada cercana a los 50 años, con 21 millones de seguidores, comparte lecciones tras más de 20 años en los negocios. Aconseja no escuchar a quienes matan tus sueños, montar el negocio en grande desde el inicio y cuidar la imagen, y advierte sobre el alto costo de casarse mal mientras atraviesa un divorcio."
+  },
+  {
+    "id": "DXXHpDdAtac",
+    "name": "Creador de contenido y luchador profesional (31 años)",
+    "role": "Creador de contenido y luchador profesional · 31 años",
+    "figure": "Millonario a los 21; oferta del 20% de su empresa por 25 millones",
+    "industry": "Medios · Entretenimiento",
+    "tags": [
+      "atención",
+      "marketing",
+      "contenido",
+      "fe",
+      "constancia"
+    ],
+    "quotes": [
+      "La atención es la moneda; cómo la manejas es el arte.",
+      "Lo contrario del amor no es el odio, es la indiferencia.",
+      "Ningún desconocido va a decirme quién soy.",
+      "La vida no es corta: haz más."
+    ],
+    "mentions": [
+      "Jesse Itzler"
+    ],
+    "transcript": "Un creador de contenido y luchador profesional de 31 años, millonario desde los 21, explica que la atención es la moneda del marketing y que el arte está en saber usarla. Empezó a hacer videos a los nueve años y defiende que captar a la gente con los medios es un superpoder, con la fe y el esfuerzo constante como pilares."
+  },
+  {
+    "id": "DXhbYZAjXy1",
+    "name": "Empresario de la industria de defensa",
+    "role": "Empresario del sector defensa",
+    "figure": "22 millones de seguidores; patrimonio en miles de millones",
+    "industry": "Defensa · Entretenimiento",
+    "tags": [
+      "defensa",
+      "superación",
+      "fe",
+      "haters",
+      "network"
+    ],
+    "quotes": [
+      "Mientras haya enemigos, habrá guerras.",
+      "Mi mamá me dijo: para salir del círculo de la pobreza, lee más, escribe más y haz más contactos.",
+      "Puedo hacer planes y Dios se ríe, porque su plan siempre es el mejor.",
+      "Mucho del odio es combustible: si no te odian, no estás haciendo nada."
+    ],
+    "mentions": [
+      "Rolls Royce",
+      "Opus Clip",
+      "Jesucristo"
+    ],
+    "transcript": "Un empresario del sector de la defensa, con 22 millones de seguidores, cuenta que salió de la pobreza siguiendo el consejo de su madre de leer, escribir y hacer contactos. Atribuye su fe a su primer combate, ve el odio de los detractores como combustible y afirma que mientras existan enemigos habrá guerras que sostienen su industria."
+  },
+  {
+    "id": "DXpINM4jYwr",
+    "name": "Magnate del tabaco (89 años)",
+    "role": "Magnate del tabaco · 89 años",
+    "figure": "Casa de 35 millones de dólares",
+    "industry": "Tabaco · Negocios",
+    "tags": [
+      "honestidad",
+      "mentalidad",
+      "riqueza",
+      "constancia",
+      "no postergar"
+    ],
+    "quotes": [
+      "Si vas a ser miserable, mejor ser miserable y rico que miserable y pobre.",
+      "Nadie gana la lotería si nunca compra el boleto.",
+      "Ser honesto te hace ganar dinero; ser deshonesto te destruye la vida.",
+      "No esperes: empieza ya, porque el tiempo se va cuesta abajo muy rápido."
+    ],
+    "mentions": [
+      "Wall Street Journal"
+    ],
+    "transcript": "Un magnate del tabaco de 89 años, dueño de una mansión de 35 millones, cuenta que detectó su oportunidad al leer en el Wall Street Journal que los jóvenes querían fumar algo distinto. Su mensaje es que el dinero llega arriesgando y siendo honesto, y que no hay que postergar porque la vida pasa vertiginosamente rápido."
+  },
+  {
+    "id": "DXuWDQmgjDc",
+    "name": "Rick Ross",
+    "role": "Rapero y empresario · 50 años",
+    "figure": "Más de 20 locales Wingstop y 30+ sociedades",
+    "industry": "Música · Franquicias",
+    "tags": [
+      "hustle",
+      "negocios",
+      "mentalidad",
+      "franquicias",
+      "accion"
+    ],
+    "quotes": [
+      "Boca cerrada no come; acostado frotándote los pies no vas a lograr nada.",
+      "Aquí no dejamos dinero sobre la mesa.",
+      "Nunca los escuché, por eso lo logré.",
+      "Nunca imaginé que podría ganar un millón de dólares de 25 formas distintas."
+    ],
+    "mentions": [
+      "Wingstop"
+    ],
+    "transcript": "Rick Ross, rapero y empresario de 50 años que se hizo millonario a los 28 con la música, cuenta que tiene más de 20 Wingstop y más de 30 sociedades, tantas que dejó de contarlas. Predica el hustle sin descanso, no dejar dinero sobre la mesa y no escuchar a los que dudan de uno."
+  },
+  {
+    "id": "DXzjvKXC3WE",
+    "name": "Fundador de empresa de IA (31 años)",
+    "role": "Fundador tecnológico · 31 años",
+    "figure": "Meta compró el 49% por 26 mil millones",
+    "industry": "Tecnología · Inteligencia artificial",
+    "tags": [
+      "inteligencia artificial",
+      "ventas",
+      "riesgo",
+      "emprendimiento",
+      "vibe coding"
+    ],
+    "quotes": [
+      "Para ser multimillonario tienes que estar un poco loco y perder algo el sentido de la realidad.",
+      "Aprende a programar por intuición: las herramientas de IA son tan buenas que ya casi no necesitas saber código.",
+      "La habilidad número uno de cualquier fundador son las ventas.",
+      "Tus mejores empleados reciben ofertas millonarias todo el tiempo, así que debes venderles quedarse cada día."
+    ],
+    "mentions": [
+      "Meta",
+      "Coachella"
+    ],
+    "transcript": "Un fundador tecnológico de 31 años, millonario a los 21 y multimillonario el año pasado, cuenta que su empresa de IA lo catapultó cuando Meta compró el 49% por 26 mil millones. Sostiene que hay que estar un poco loco para asumir el riesgo, que las ventas son la habilidad clave de todo fundador y que la IA permite revolucionar industrias sin saber programar."
+  },
+  {
+    "id": "DY7neVGCr86",
+    "name": "Rich Paul",
+    "role": "Agente deportivo · 45 años",
+    "figure": "Mil millones en contratos en un solo verano",
+    "industry": "Deporte · Representación",
+    "tags": [
+      "negociación",
+      "ego",
+      "humildad",
+      "respeto",
+      "mentalidad"
+    ],
+    "quotes": [
+      "McDonald's nunca revela la receta de la salsa del Big Mac; yo no revelo mi secreto para negociar.",
+      "No hay reloj en una negociación: ¿alguna vez viste un reloj en un casino?",
+      "El ego mata muchos negocios.",
+      "Como te dijo mi padre: eres hombre una vez y niño dos veces; trata a la gente con humildad y respeto."
+    ],
+    "mentions": [
+      "LeBron James",
+      "McDonald's"
+    ],
+    "transcript": "Rich Paul, agente deportivo de 45 años que representa a LeBron James, cuenta que cerró mil millones en contratos en un solo verano. Guarda su secreto de negociación pero comparte que el tiempo no debe presionar un trato y que el ego es lo que suele matar los negocios, sosteniendo que tratar a la gente con humildad y respeto siempre regresa."
+  },
+  {
+    "id": "DYAUOTru1JE",
+    "name": "Kevin O'Leary y Robert Herjavec",
+    "role": "Inversores y empresarios · 71 y 64 años",
+    "figure": "Multimillonarios inversores de Shark Tank",
+    "industry": "Inversión · Tecnología",
+    "tags": [
+      "ventas",
+      "proposito",
+      "enfoque",
+      "riesgo",
+      "emprendimiento"
+    ],
+    "quotes": [
+      "Los buenos vendedores venden un producto; los grandes vendedores venden valor.",
+      "Solo hay tres cosas que debes lograr cada día, eso es la señal; todo lo demás es ruido.",
+      "Nunca conocí a alguien con gran riqueza que no tuviera un gran propósito.",
+      "El 80% de la gente trabaja para el 20% que son los emprendedores: ¿eres tú de ese 20%?"
+    ],
+    "mentions": [
+      "Steve Jobs",
+      "Robert Herjavec",
+      "Kevin O'Leary"
+    ],
+    "transcript": "Dos inversores y empresarios de Shark Tank, de 71 y 64 años, coinciden en que las ventas son la habilidad esencial y que hay que distinguir la señal del ruido enfocándose en tres tareas diarias, consejo que atribuyen a Steve Jobs. Afirman que todo gran millonario tiene un gran propósito y anima a los jóvenes a asumir el riesgo de emprender."
+  },
+  {
+    "id": "DYFhZM0OouM",
+    "name": "Stephen Ross",
+    "role": "Desarrollador inmobiliario y dueño de los Miami Dolphins · 86 años",
+    "figure": "Dueño de un equipo NFL, sin inversores externos",
+    "industry": "Bienes raíces · Deporte",
+    "tags": [
+      "bienes raíces",
+      "ejecucion",
+      "riesgo",
+      "ubicacion",
+      "proposito"
+    ],
+    "quotes": [
+      "Todo el mundo tiene ideas; la diferencia es la ejecución, actuar sobre ellas.",
+      "Solo hay lugar en la cima, y yo quería ser el mejor de la clase.",
+      "En bienes raíces todo es ubicación, ubicación, ubicación.",
+      "El sur de Florida ofrece hoy la mayor oportunidad de cualquier lugar."
+    ],
+    "mentions": [
+      "Miami Dolphins",
+      "Miami",
+      "Palm Beach"
+    ],
+    "transcript": "Stephen Ross, desarrollador inmobiliario de 86 años y dueño de los Miami Dolphins, cuenta que empezó desde cero sin ningún inversor en su empresa. Insiste en que la clave no son las ideas sino la ejecución y la ubicación, y sostiene que el sur de Florida es hoy el mejor lugar del mundo para hacer negocios."
+  },
+  {
+    "id": "DYKmuR4OCqL",
+    "name": "Sobreviviente del Holocausto (más de 90 años)",
+    "role": "Sobreviviente del Holocausto y empresario · más de 90 años",
+    "figure": "Sobrevivió a los campos de concentración siendo niño",
+    "industry": "Negocios · Testimonio de vida",
+    "tags": [
+      "supervivencia",
+      "familia",
+      "resiliencia",
+      "amor",
+      "fe"
+    ],
+    "quotes": [
+      "Lo mejor era mantenerlo simple: una cucaracha era proteína, cualquier cosa para comer.",
+      "Vi demasiadas cosas terribles en mi vida como para creer que existe un Dios que permitiría eso.",
+      "Disfruta a tu familia, porque a veces se van demasiado pronto.",
+      "Lo único que puedo pedir es que se esparza amor por el mundo."
+    ],
+    "mentions": [],
+    "transcript": "Un sobreviviente del Holocausto de más de 90 años relata cómo sobrevivió escondido siendo niño, comiendo insectos por pura supervivencia, y cómo su padre murió baleado en sus brazos cuando tenía cinco años. Perdió la fe por el horror que vivió, pero su mensaje final es disfrutar a la familia y esparcir amor por el mundo."
+  },
+  {
+    "id": "DYSYnOTid_a",
+    "name": "Dueño de parques de diversiones (85 años)",
+    "role": "Empresario de parques de diversiones · 85 años",
+    "figure": "Dueño de 13 parques de diversiones",
+    "industry": "Entretenimiento · Parques de diversiones",
+    "tags": [
+      "familia",
+      "fe",
+      "matrimonio",
+      "disciplina",
+      "constancia"
+    ],
+    "quotes": [
+      "El mejor vínculo que puede tener una persona es con su esposa.",
+      "Todos vamos por el mismo camino; algunos van solo más adelante que otros.",
+      "Acostarse temprano y levantarse temprano te hace sano, rico y sabio.",
+      "Pedí prestado en grande; no robé, pero no crecí con dinero."
+    ],
+    "mentions": [
+      "Jesucristo",
+      "Go High Level"
+    ],
+    "transcript": "Un empresario de 85 años dueño de 13 parques de diversiones, con 66 nietos y 55 años de matrimonio, hizo su primer millón a los 27 empezando desde cero mediante préstamos. Atribuye su éxito a su fe, a la disciplina del ayuno y a un buen matrimonio, y aconseja a los jóvenes casarse bien y madrugar."
+  },
+  {
+    "id": "DYXfyqYOfB5",
+    "name": "James",
+    "role": "Empresario · 68 años",
+    "figure": "La mayor empresa de jardinería en bases militares de EE. UU.",
+    "industry": "Jardinería · Bienes raíces",
+    "tags": [
+      "flujo de caja",
+      "superación",
+      "bienes raíces",
+      "fe",
+      "filantropía"
+    ],
+    "quotes": [
+      "El patrimonio no significa nada; el flujo de caja lo es todo.",
+      "A los 16, tras perder a mi madre, empecé con una simple cortadora de césped.",
+      "Nunca he visto un coche fúnebre remolcar un tráiler: nadie se lleva nada, ayuda a los demás mientras estás aquí.",
+      "Warren Buffett dice que el dinero compra experiencia, y la experiencia termina quedándose con el dinero."
+    ],
+    "mentions": [
+      "Warren Buffett",
+      "Jesucristo"
+    ],
+    "transcript": "James perdió a su madre a los 16 y arrancó con una cortadora de césped hasta crear la mayor empresa de jardinería de bases militares de EE. UU., que vendió por 10 millones. Reinvirtió en acciones y bienes raíces, hoy con 2.600 apartamentos, y predica que el flujo de caja importa más que el patrimonio y que hay que ayudar a los demás."
+  },
+  {
+    "id": "DYfOAJ-O61a",
+    "name": "Marc Lore",
+    "role": "Emprendedor · Dueño de los Minnesota Timberwolves · 55 años",
+    "figure": "Vendió Jet.com a Walmart por 3.300 millones",
+    "industry": "Comercio electrónico · Deporte",
+    "tags": [
+      "escalar",
+      "capital",
+      "equipo",
+      "emprendimiento",
+      "visión"
+    ],
+    "quotes": [
+      "Escalar empresas se resume en tres cosas: Visión, Capital y Personas.",
+      "Ser emprendedor es como comer vidrio: trabajas durísimo por una baja probabilidad de éxito.",
+      "Nunca pienso en la dilución; pienso en poner a las personas correctas en los puestos correctos y ocurre la magia.",
+      "Da al mundo más de lo que tomas y todo lo demás vendrá solo."
+    ],
+    "mentions": [
+      "Walmart",
+      "Jet.com",
+      "Minnesota Timberwolves"
+    ],
+    "transcript": "Marc Lore, que vendió Jet.com a Walmart por 3.300 millones y es dueño de los Timberwolves, explica que escalar empresas se basa en su fórmula VCP: Visión, Capital y Personas. Defiende levantar todo el capital posible, obsesionarse con el trabajo y devolver al mundo más de lo que se toma."
+  },
+  {
+    "id": "DYm82vPCY-1",
+    "name": "Bill",
+    "role": "Inversor legendario · casi 60 años",
+    "figure": "Considerado uno de los mejores inversores de la historia",
+    "industry": "Inversión · Finanzas",
+    "tags": [
+      "largo plazo",
+      "inversión",
+      "ia",
+      "persistencia",
+      "aprendizaje"
+    ],
+    "quotes": [
+      "Querer ganar dinero muy rápido es casi invertir en un mal resultado garantizado.",
+      "Puedes aprender leyendo y pensando a largo plazo en un mundo de gente cortoplacista.",
+      "Lo que sabes vale más que a quién conoces: si tienes una idea brillante, el capital te encontrará.",
+      "Ninguna persona exitosa subió en línea recta; nunca te rindas."
+    ],
+    "mentions": [
+      "Claude Code"
+    ],
+    "transcript": "Un inversor legendario, a punto de cumplir 60 años, sostiene que la clave es pensar a largo plazo mientras los demás piensan a corto. Recomienda aprender sobre IA y a programar con Claude Code, afirma que las grandes ideas atraen el capital y que este es el mejor momento de la historia para emprender."
+  },
+  {
+    "id": "DYusxYnirg1",
+    "name": "Empresario de control de plagas (anónimo)",
+    "role": "Emprendedor · Primer millón a los 27",
+    "figure": "El 43% de quienes ganan más de 2 millones al año están en negocios aburridos",
+    "industry": "Control de plagas · Ventas",
+    "tags": [
+      "negocios aburridos",
+      "ventas",
+      "márgenes",
+      "ia",
+      "emprendimiento"
+    ],
+    "quotes": [
+      "El 43% de quienes ganan más de 2 millones al año están en negocios aburridos que no están en el radar de nadie.",
+      "Los restaurantes tienen un margen del 3 al 6%; los baños portátiles, un 25%: eso sí que es sexy.",
+      "Para cerrar a alguien, dale solo dos opciones que te convengan a ti.",
+      "Cuanto más sepas de ventas, mejor te irá."
+    ],
+    "mentions": [
+      "Anthropic"
+    ],
+    "transcript": "Un empresario que hizo fortuna en el control de plagas, con su primer millón a los 27, defiende los negocios aburridos por sus altos márgenes frente a los glamorosos. Comparte un mini máster de ventas basado en el cierre por opciones y dice que hoy invierte en IA, incluida Anthropic."
+  },
+  {
+    "id": "DYz3x9iC3Ux",
+    "name": "Atleta de la NBA (anónimo)",
+    "role": "Jugador de baloncesto de la NBA",
+    "figure": "120 millones en un solo año",
+    "industry": "Deporte · Inversión",
+    "tags": [
+      "mentalidad",
+      "riqueza",
+      "inversión",
+      "deporte",
+      "autoafirmación"
+    ],
+    "quotes": [
+      "Lo rico es lo que se ve; la riqueza es lo que no se ve.",
+      "El 60% de los atletas quiebra seis años después de retirarse porque gastan en cadenas y coches.",
+      "Si invierto en el mercado, probablemente sea multimillonario incluso mientras sigo jugando.",
+      "Habla las cosas para que existan, porque tu cerebro te escucha y hace todo para lograrlas."
+    ],
+    "mentions": [
+      "Kobe Bryant"
+    ],
+    "transcript": "Un jugador de la NBA que llegó a ganar 120 millones en un año advierte que la mayoría de los atletas quiebra por gastar en lujos visibles en vez de invertir. Comparte su mentalidad dentro de la cancha y una lección de Kobe Bryant sobre escribir MVP y hablar las metas para que se hagan realidad."
+  },
+  {
+    "id": "DZ5WdofiIP-",
+    "name": "Pionero de la informática de los años 80 (anónimo)",
+    "role": "Emprendedor tecnológico · Nueve cifras",
+    "figure": "650 millones en un solo año",
+    "industry": "Tecnología · Informática",
+    "tags": [
+      "reputación",
+      "crédito",
+      "trabajo duro",
+      "superación",
+      "fe"
+    ],
+    "quotes": [
+      "Solo controlas dos cosas en la vida: tu crédito y tu reputación; todo lo demás te lo pueden arruinar.",
+      "Nadie entiende el trabajo duro que hay detrás; creen que te lo regalaron.",
+      "En 1979 pusimos la casa de mi madre como garantía de un préstamo: no podíamos fallar.",
+      "Vive cada día como si fuera el último: trabaja duro y disfruta duro."
+    ],
+    "mentions": [
+      "High Level",
+      "Jesucristo"
+    ],
+    "transcript": "Un pionero de la industria informática de los años 80, que llegó a ganar 650 millones en un año, perdió a su padre a los 12 y arriesgó la casa de su madre para financiar su negocio. Sostiene que lo único que uno controla es su crédito y su reputación, y atribuye su éxito al trabajo duro y a su fe."
+  },
+  {
+    "id": "DZAtJMBijMN",
+    "name": "Médico inversor (anónimo)",
+    "role": "Doctor · 30 años",
+    "figure": "Invierte en empresas antes de su salida a bolsa",
+    "industry": "Medicina · Inversión",
+    "tags": [
+      "dinero y felicidad",
+      "comprar la caída",
+      "competitividad",
+      "disciplina",
+      "pre-ipo"
+    ],
+    "quotes": [
+      "El dinero sí compra la felicidad: solo vivir en esta tierra cuesta dinero.",
+      "Mi consejo financiero es simple: compra la caída.",
+      "Los profesores me decían que no llegaría lejos; no los escuché porque conocía mi potencial.",
+      "Mientras otros duermen, tú sigues despierto haciendo lo que tienes que hacer."
+    ],
+    "mentions": [
+      "Opus Clip"
+    ],
+    "transcript": "Un médico de 30 años defiende sin rodeos que el dinero compra la felicidad y que su estrategia es comprar la caída e invertir en empresas antes de su salida a bolsa. Atribuye su éxito a la competitividad y a trabajar más horas que los demás, ignorando a quienes dudaron de él."
+  },
+  {
+    "id": "DZF2v7BCf-c",
+    "name": "Andy",
+    "role": "Emprendedor · Financiación subprime y suplementos",
+    "figure": "Ingresos de nueve cifras (más de 300 millones)",
+    "industry": "Finanzas · Suplementos",
+    "tags": [
+      "mentalidad",
+      "resiliencia",
+      "autoexigencia",
+      "conocimiento",
+      "emprendimiento"
+    ],
+    "quotes": [
+      "La mentalidad de víctima es pura basura: aunque estés quebrado, tienes la capacidad de ser ingenioso.",
+      "Mis primeros tres años no gané nada, pero no tenía otra opción que lograrlo.",
+      "Nadie va a venir a salvarte; tienes que tumbar esa puerta una y otra vez.",
+      "Primero importa lo que sabes y luego a quién conoces: nadie querrá conocerte hasta que valgas la pena."
+    ],
+    "mentions": [],
+    "transcript": "Andy, dueño de una de las mayores empresas subprime del mundo y de una marca de suplementos, conduce un Bugatti de 4,5 millones y factura nueve cifras. Sostiene que lo que mantiene pobre a la gente es la mentalidad de víctima, que hay que ser resiliente y algo loco, y que nadie vendrá a salvarte."
+  },
+  {
+    "id": "DZNo-QRiszO",
+    "name": "Jamie Salter",
+    "role": "Fundador de un grupo de marcas · 63 años",
+    "figure": "40.000 millones en ventas al año",
+    "industry": "Licencias de marcas · Retail",
+    "tags": [
+      "diversificación",
+      "marcas",
+      "escuchar",
+      "valores familiares",
+      "mentoría"
+    ],
+    "quotes": [
+      "Me encanta rodearme de gente mucho más inteligente que yo.",
+      "Las empresas se rompen, pero las marcas tienen un latido: cuando compras una marca, está viva.",
+      "En la gente busco ética de trabajo, pero también valores familiares.",
+      "Escucha a tus padres y sigue a tus mentores favoritos."
+    ],
+    "mentions": [
+      "Elvis Presley"
+    ],
+    "transcript": "Jamie Salter, fundador de un imperio de marcas que factura 40.000 millones al año, cuenta que hizo su primer millón a los 18 y su primer billón hacia los 36. Atribuye su éxito a la diversificación, a rodearse de gente más lista, a saber escuchar y a integrar a la familia en el negocio."
+  },
+  {
+    "id": "DZahA-gC8V3",
+    "name": "Inventor de Pictionary (anónimo)",
+    "role": "Inventor y empresario · 68 años",
+    "figure": "Vendió su empresa por 29 millones",
+    "industry": "Juegos · Emprendimiento",
+    "tags": [
+      "ventas",
+      "vender un negocio",
+      "legado",
+      "familia",
+      "persistencia"
+    ],
+    "quotes": [
+      "Antes de vender un negocio, prepárate para marcharte.",
+      "Rechacé una oferta mayor no por el dinero, sino porque querían el control total.",
+      "En 1982 tenía la idea de un producto que quería mostrarle al mundo: esa fue mi integración.",
+      "Todos quieren ser emprendedores en serie; yo elegí criar a mis hijos, y ese es mi verdadero legado, no Pictionary."
+    ],
+    "mentions": [
+      "Shopify",
+      "Sidekick"
+    ],
+    "transcript": "El inventor de Pictionary relata cómo convirtió una idea de 1982 en un juego que vendió por 29 millones, rechazando una oferta mayor porque querían quitarle el control. Da consejos sobre vender un negocio y sobre saber venderse, y afirma que su mayor legado no es Pictionary sino haber criado a sus hijos."
+  },
+  {
+    "id": "DZnXOx0CPPD",
+    "name": "Empresario de videojuegos de GTA (anónimo)",
+    "role": "Directivo de la industria del videojuego · 68 años",
+    "figure": "230 millones de copias de GTA y 6.700 millones de ingresos anuales",
+    "industry": "Videojuegos · Entretenimiento",
+    "tags": [
+      "integridad",
+      "largo plazo",
+      "paciencia",
+      "pasión",
+      "videojuegos"
+    ],
+    "quotes": [
+      "Nunca comprometas tu integridad: es lo único que realmente tienes.",
+      "Todo lo que vale la pena es difícil y lleva mucho tiempo.",
+      "Los únicos éxitos de la noche a la mañana son los de otra persona.",
+      "Persigue la intersección entre lo que te gusta hacer y hazlo: el mundo se te abrirá."
+    ],
+    "mentions": [
+      "Grand Theft Auto",
+      "Rockstar",
+      "Harvard Business School"
+    ],
+    "transcript": "El máximo responsable de la compañía detrás de Grand Theft Auto, con 230 millones de copias vendidas y unos 6.700 millones de ingresos anuales, confirma que GTA 6 sale el 19 de noviembre. Su gran lección es no comprometer nunca la integridad y entender que todo lo valioso es difícil y lleva tiempo."
+  },
+  {
+    "id": "DZsiUfMCJo5",
+    "name": "Inversor multimillonario anónimo",
+    "role": "Inversor · 75 años",
+    "figure": "Se hizo multimillonario invirtiendo tras crecer sin recursos",
+    "industry": "Inversión · Energía nuclear",
+    "tags": [
+      "inversión",
+      "mentalidad",
+      "negocios de calidad",
+      "largo plazo",
+      "legado",
+      "energía"
+    ],
+    "quotes": [
+      "Si sabes cuánto vales, es que no vales tanto.",
+      "Los ricos hacen cinco cosas: poseen pocas empresas de gran calidad, las entienden a fondo, eligen sectores de fuerte crecimiento y mantienen a largo plazo.",
+      "Cuando cambia la fuente dominante de energía, cambia el poder económico; hoy ese giro es hacia lo nuclear.",
+      "Para triunfar necesitas un doctorado: pobre, hambriento y determinado. No vine de una familia rica, pero una familia rica salió de mí."
+    ],
+    "mentions": [],
+    "transcript": "Un inversor de 75 años cuya madre fue huérfana explica que se hizo multimillonario comprando pocas empresas de calidad y manteniéndolas a largo plazo. Recomienda apostar hoy por la energía nuclear y define el éxito con su fórmula PhD: pobre, hambriento y determinado."
+  },
+  {
+    "id": "DZxm4wZCwOx",
+    "name": "El hombre más rico de África",
+    "role": "Empresario industrial · fundador de conglomerado",
+    "figure": "Patrimonio estimado en más de 30.000 millones de dólares",
+    "industry": "Industria · Cemento y alimentación",
+    "tags": [
+      "ventas",
+      "negocios aburridos",
+      "áfrica",
+      "legado",
+      "negociación",
+      "escalar"
+    ],
+    "quotes": [
+      "Ya superé la etapa de hacer negocios solo por dinero; ahora lo hago por dejar un legado.",
+      "Quiero ser recordado como quien industrializó África: para 2050 seremos 2.500 millones de personas y el 70% ya tiene menos de 30 años.",
+      "En una negociación tienes que tratar al cliente como a un rey.",
+      "Construí lo que la gente necesita de verdad: cemento, arroz, harina; cosas aburridas que antes importábamos y ahora producimos."
+    ],
+    "mentions": [
+      "Forbes"
+    ],
+    "transcript": "El empresario más rico de África, que empezó vendiendo dulces a sus compañeros, cuenta que hoy vale más de 30.000 millones y busca dejar un legado industrializando el continente. Defiende construir negocios básicos como cemento y alimentos, y tratar al cliente como un rey en toda negociación."
+  },
+  {
+    "id": "Da5tQz9CETa",
+    "name": "Inventora e inversora de Shark Tank",
+    "role": "Inventora · Inversora de televisión",
+    "figure": "Autora de las dos mayores inversiones en la historia de Shark Tank",
+    "industry": "Productos de consumo · Inversión",
+    "tags": [
+      "atención",
+      "productos de consumo",
+      "riesgo",
+      "consistencia",
+      "ventas",
+      "emprender"
+    ],
+    "quotes": [
+      "Donde va la atención, fluye el dinero.",
+      "Tienes que poder explicar qué es tu producto en segundos, para que la gente lo entienda al instante.",
+      "Nadie ha pagado nunca mis facturas con su opinión, por eso seguí adelante.",
+      "Lo mejor es un producto que la gente necesita y que se consume una y otra vez, como un cepillo de dientes o una esponja."
+    ],
+    "mentions": [
+      "Shark Tank"
+    ],
+    "transcript": "Una inventora que lanzó su primer producto en 1996 y protagoniza las dos mayores inversiones de la historia de Shark Tank explica que el secreto está en captar la atención en segundos. Prefiere productos consumibles de recompra y anima a arriesgar recordando que lo peor que puede pasar es morir."
+  },
+  {
+    "id": "DaBLgsKCI-E",
+    "name": "Fundador de banco nigeriano anónimo",
+    "role": "Banquero · Filántropo",
+    "figure": "Donó más de 100 millones de dólares a jóvenes emprendedores africanos",
+    "industry": "Banca · Filantropía",
+    "tags": [
+      "marathon empresarial",
+      "sacrificio",
+      "activos",
+      "legado",
+      "áfrica",
+      "fe"
+    ],
+    "quotes": [
+      "El emprendimiento es una maratón, no una carrera de victorias rápidas.",
+      "Decidí no comprarme un coche y usar ese dinero para adquirir propiedades; volé en jet privado antes de tener automóvil.",
+      "Cuando haces cosas extraordinarias, la gente piensa que estás loco; hasta Jesús vivió adelantado a su tiempo.",
+      "No puedes ser el único árbol del bosque: hay que democratizar la prosperidad."
+    ],
+    "mentions": [
+      "Jesús"
+    ],
+    "transcript": "Fundador de uno de los mayores bancos de África relata que renunció a comodidades como tener coche para invertir en activos e inmuebles. Regaló más de 100 millones de dólares a emprendedores jóvenes por convicción de dejar legado y democratizar la prosperidad."
+  },
+  {
+    "id": "DaIx-DnCalm",
+    "name": "Inversora de private equity anónima",
+    "role": "Inversora de capital privado · 36 años",
+    "figure": "Gestiona unos 80 millones de dólares; tardó 8 años en levantar su primer fondo",
+    "industry": "Capital privado · Inversión",
+    "tags": [
+      "persistencia",
+      "rechazo",
+      "áfrica",
+      "economía informal",
+      "conexión humana",
+      "fe"
+    ],
+    "quotes": [
+      "El río atraviesa la roca no por su fuerza, sino por su persistencia.",
+      "El 99% del éxito es negarse a aceptar un no por respuesta.",
+      "Si nadie te da un asiento en la mesa, créalo tú misma.",
+      "La economía informal es una oportunidad de un billón de dólares que nadie está mirando: quien la potencie será multimillonario."
+    ],
+    "mentions": [
+      "Jesús"
+    ],
+    "transcript": "Una inversora de capital privado de 36 años cuenta que tardó ocho años en levantar su primer fondo pese a que le decían que era joven, negra y mujer. Ve en la economía informal africana una oportunidad de un billón de dólares y atribuye su persistencia a la fe."
+  },
+  {
+    "id": "DaQhJXzCqom",
+    "name": "Desarrollador inmobiliario africano anónimo",
+    "role": "Desarrollador inmobiliario",
+    "figure": "Hasta 60 millones de dólares en un solo año; primer préstamo de 50 millones de nairas",
+    "industry": "Inmobiliario · Marketing",
+    "tags": [
+      "reputación",
+      "percepción",
+      "bancos",
+      "ventas",
+      "sobreentregar",
+      "visibilidad"
+    ],
+    "quotes": [
+      "Tu nombre es tu primera oportunidad de ganar dinero: te precede en cada sala.",
+      "El secreto es prometer y sobreentregar.",
+      "A los bancos les encanta que tu dinero esté quieto en sus cuentas; ponlo a trabajar para ti.",
+      "La percepción lo es todo: hasta Coca-Cola, siendo global, sigue anunciándose."
+    ],
+    "mentions": [
+      "Coca-Cola",
+      "Bizee"
+    ],
+    "transcript": "Uno de los mayores desarrolladores inmobiliarios de África, que llegó a facturar 60 millones en un año, empezó con un préstamo bancario que no desaprovechó. Insiste en construir reputación, sobreentregar y no dejar el dinero quieto en el banco, porque la percepción lo es todo."
+  },
+  {
+    "id": "DaVqf79CgLS",
+    "name": "Empresario multimillonario anónimo",
+    "role": "Empresario · 72 años · candidato a gobernador",
+    "figure": "3.000 millones de dólares facturados en un solo año sin inversores externos",
+    "industry": "Negocios · Política",
+    "tags": [
+      "mentalidad",
+      "responsabilidad",
+      "autodidacta",
+      "ventas",
+      "superación",
+      "fe"
+    ],
+    "quotes": [
+      "Me crié en los proyectos sociales, sin padre, y entré al sistema de acogida a los 13 años.",
+      "Nunca me vi como una víctima: no culpo a nadie más que a mí mismo.",
+      "Puedes tener todo lo que quieras en el mundo si ayudas a otros a conseguir lo que ellos quieren.",
+      "No es mi dinero, es el dinero de Dios, y creo que me ha preparado para lo que voy a hacer ahora."
+    ],
+    "mentions": [
+      "Jesús"
+    ],
+    "transcript": "Un empresario de 72 años que creció en la pobreza y pasó por hogares de acogida escaló hasta facturar 3.000 millones en un año sin capital externo, trabajando sobre el negocio y no en él. Rechaza la mentalidad de víctima y ahora se presenta como candidato a gobernador de Georgia."
+  },
+  {
+    "id": "DadeBi9CQFb",
+    "name": "Empresario de petróleo y gas anónimo",
+    "role": "Empresario de petróleo y gas",
+    "figure": "Cerró una transacción valorada en más de mil millones de dólares",
+    "industry": "Petróleo y gas · Negociación",
+    "tags": [
+      "negociación",
+      "ventas",
+      "capital",
+      "pensar global",
+      "olfato para negocios",
+      "legado"
+    ],
+    "quotes": [
+      "Mi superpoder es la capacidad de oler, ver, sentir y tocar un buen trato.",
+      "Hoy no necesitas mucho dinero para empezar: necesitas inteligencia, porque al mundo no le falta capital buscando retorno.",
+      "Mi secreto para negociar son tres pasos: escucha, acuerda o discrepa, y cierra.",
+      "Cualquier negocio que valga la pena debe pensar global; yo lo llamo glocal."
+    ],
+    "mentions": [],
+    "transcript": "Un empresario nigeriano de clase media que llegó a la industria del petróleo y gas cerró una operación valorada en más de mil millones de dólares. Sostiene que hoy sobra capital buscando retorno y que basta inteligencia, buena negociación y pensar de forma global."
+  },
+  {
+    "id": "DaikFFIi-yF",
+    "name": "Dueño de preescolares anónimo",
+    "role": "Empresario del sector educativo",
+    "figure": "Cerca de 2 millones de dólares en un solo año con dos preescolares grandes",
+    "industry": "Educación · Emprendimiento",
+    "tags": [
+      "emprender",
+      "empleados",
+      "matrimonio",
+      "libertad financiera",
+      "fe",
+      "trabajo duro"
+    ],
+    "quotes": [
+      "No quería trabajar para nadie más; ser emprendedor lo llevo en el ADN.",
+      "El mejor consejo que recibí fue cuidar de los empleados.",
+      "Elegir a la mujer correcta es clave: llevo 30 años de matrimonio.",
+      "Supe que Jesús era real porque lo sentí en mi espíritu."
+    ],
+    "mentions": [
+      "Jesús"
+    ],
+    "transcript": "Un emprendedor cuya familia posee dos preescolares muy grandes cuenta que llegó a facturar cerca de 2 millones en un año. Atribuye su éxito a trabajar por cuenta propia, cuidar a los empleados, un matrimonio sólido de 30 años y su fe."
+  },
+  {
+    "id": "DanrXeNuuoI",
+    "name": "Marchante de arte anónimo",
+    "role": "Empresario del mercado del arte · 55 años",
+    "figure": "Ganó un millón de dólares en un solo día",
+    "industry": "Arte · Ventas",
+    "tags": [
+      "precio",
+      "ventas",
+      "persistencia",
+      "entorno",
+      "mentalidad",
+      "seguimiento"
+    ],
+    "quotes": [
+      "Hay que creerlo para verlo, en un mundo que necesita verlo para creerlo.",
+      "Cuanto más alto el precio, más fácil es vender: la gente lo percibe como algo más especial.",
+      "Ni el éxito ni el fracaso son nunca definitivos; me encanta perseguir el rechazo.",
+      "La clave es no tener gente tóxica cerca y saber cortarla rápido; sé tú mismo, porque los demás ya están ocupados."
+    ],
+    "mentions": [
+      "HighLevel"
+    ],
+    "transcript": "Un marchante de arte de 55 años relata que llegó a ganar un millón de dólares en un solo día y que en su sector subir el precio facilita la venta. Predica persistencia, seguimiento constante y rodearse solo de personas positivas."
+  },
+  {
+    "id": "DavZiqvqfAk",
+    "name": "Fundador de dos unicornios de Lagos",
+    "role": "Emprendedor tecnológico · 35 años",
+    "figure": "Construyó dos empresas de mil millones de dólares desde Lagos, Nigeria",
+    "industry": "Tecnología · Emprendimiento",
+    "tags": [
+      "equipo",
+      "networking",
+      "servir",
+      "sistemas",
+      "riqueza compartida",
+      "áfrica"
+    ],
+    "quotes": [
+      "Una empresa de mil millones es un grupo de personas que podían haber creado negocios de 10 millones por separado y decidieron unirse.",
+      "Dos hombres pobres no pueden ayudarse entre sí: consigue amigos ricos.",
+      "Cuanto más dinero haces ganar a otros, más dinero vas a ganar tú.",
+      "Las cuatro palabras más poderosas del mundo son: ¿cómo puedo ayudar?"
+    ],
+    "mentions": [
+      "Mark Zuckerberg",
+      "Delaware"
+    ],
+    "transcript": "Un emprendedor de 35 años cuenta que construyó dos empresas valoradas en mil millones desde Lagos, y que Mark Zuckerberg invirtió en la primera. Insiste en que todo se reduce al equipo, a servir a los demás y a rodearse de gente que también gana dinero."
+  }
+];
+const grid=document.getElementById('grid');
+const cloudEl=document.getElementById('cloud');
+let cloudHits=[]; let lastFiltered=DATA;
+
+const STOP=new Set(("de la el que y a en un una los las se por con para su sus lo mas más no es al" +
+  " del como me mi te tu ti o si ya muy pero este esta esto eso esa ese esos esas todo toda todos" +
+  " todas hacer ser tener tienes tiene tienen tengo hay cada cosa cosas gente vida solo sólo e uno" +
+  " cuando porque qué que quién quien cómo como dónde donde entre sobre hasta desde ni le les nos" +
+  " yo él el ella ellos ellas va van dijo dice así asi aquí aqui ahí ahi algo alguien otro otra" +
+  " otros otras mismo misma u fue era eran están estan está esta estar estoy sin bien más mucho" +
+  " mucha muchos muchas poco poca soy eres somos son ha he has han haya sea ese esto le nunca" +
+  " siempre también tambien luego después despues antes ahora aún aun casi cual cuál quiere quieren" +
+  " puede pueden puedes hace hacen dar da los las le lo un the and for that you your with have this" +
+  " but not are was will can").split(/\s+/));
+
+function computeCloud(items){
+  const freq=new Map();
+  items.forEach(d=>{
+    const text=(d.quotes.join(' ')+' '+d.transcript+' '+d.role+' '+d.industry+' '+
+      d.tags.join(' ')+' '+d.mentions.join(' '));
+    text.toLowerCase().split(/[^a-záéíóúñü-]+/i).forEach(w=>{
+      w=w.replace(/^-+|-+$/g,'');
+      if(w.length<4 || STOP.has(w) || /^\d+$/.test(w)) return;
+      freq.set(w,(freq.get(w)||0)+1);
+    });
+  });
+  return [...freq.entries()].sort((a,b)=>b[1]-a[1]).slice(0,45);
+}
+
+function getPalette(){
+  const dark=(document.documentElement.getAttribute('data-theme')||
+    (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))==='dark';
+  return dark
+    ?['oklch(75% 0.15 285)','oklch(74% 0.13 235)','oklch(72% 0.14 315)','oklch(76% 0.12 205)',
+      'oklch(70% 0.15 265)','oklch(78% 0.11 330)','oklch(72% 0.13 250)','oklch(80% 0.1 210)']
+    :['oklch(55% 0.19 285)','oklch(58% 0.15 235)','oklch(52% 0.18 315)','oklch(60% 0.14 205)',
+      'oklch(48% 0.19 265)','oklch(62% 0.13 330)','oklch(45% 0.17 250)','oklch(64% 0.12 210)'];
+}
+function areaFree(g,cols,rows,cell,x,y,w,h){
+  const c0=Math.floor(x/cell),r0=Math.floor(y/cell),c1=Math.ceil((x+w)/cell),r1=Math.ceil((y+h)/cell);
+  for(let r=r0;r<r1;r++)for(let c=c0;c<c1;c++){
+    if(r<0||c<0||r>=rows||c>=cols)return false;if(g[r*cols+c])return false;}
+  return true;
+}
+function areaMark(g,cols,rows,cell,x,y,w,h){
+  const c0=Math.floor(x/cell),r0=Math.floor(y/cell),c1=Math.ceil((x+w)/cell),r1=Math.ceil((y+h)/cell);
+  for(let r=r0;r<r1;r++)for(let c=c0;c<c1;c++){
+    if(r>=0&&c>=0&&r<rows&&c<cols)g[r*cols+c]=1;}
+}
+function renderCloud(items){
+  lastFiltered=items;
+  const words=computeCloud(items);
+  const ctx=cloudEl.getContext('2d');
+  const dpr=Math.min(2,window.devicePixelRatio||1);
+  const W=cloudEl.clientWidth||600, H=cloudEl.clientHeight||360;
+  cloudEl.width=W*dpr; cloudEl.height=H*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,W,H);
+  cloudHits=[];
+  const cs=getComputedStyle(document.body);
+  if(!words.length){
+    ctx.fillStyle=cs.getPropertyValue('--muted');
+    ctx.font='15px '+cs.getPropertyValue('--sans');
+    ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText('Sin palabras que mostrar con este filtro.',W/2,H/2);
+    return;
+  }
+  const q=qInput.value.trim().toLowerCase();
+  const max=words[0][1], min=words[words.length-1][1];
+  const minF=13, maxF=Math.max(30,Math.min(72,W/9));
+  const pal=getPalette();
+  const serif=cs.getPropertyValue('--serif');
+  const brass=cs.getPropertyValue('--brass').trim();
+  const cell=4, cols=Math.ceil(W/cell), rows=Math.ceil(H/cell);
+  const g=new Uint8Array(cols*rows);
+  const cx=W/2, cy=H/2;
+  words.forEach(([w,n],i)=>{
+    const t=(max===min)?0.7:(n-min)/(max-min);
+    const size=minF+Math.pow(t,0.8)*(maxF-minF);
+    const weight=i<3?700:(i<10?600:500);
+    const rot=(i>2 && i%7===3)?-Math.PI/2:0;
+    ctx.font=`${weight} ${size}px ${serif}`;
+    const tw=ctx.measureText(w).width, th=size;
+    const bw=(rot?th:tw)+8, bh=(rot?tw:th)+6;
+    let placed=false;
+    for(let r=0;r<Math.max(W,H)&&!placed;r+=3){
+      const aStep=r<8?0.9:Math.max(0.18,7/r);
+      for(let a=0;a<Math.PI*2;a+=aStep){
+        const px=cx+r*Math.cos(a), py=cy+r*Math.sin(a)*0.66;
+        const x0=px-bw/2, y0=py-bh/2;
+        if(x0<2||y0<2||x0+bw>W-2||y0+bh>H-2)continue;
+        if(areaFree(g,cols,rows,cell,x0,y0,bw,bh)){
+          areaMark(g,cols,rows,cell,x0,y0,bw,bh);
+          ctx.save();ctx.translate(px,py);if(rot)ctx.rotate(rot);
+          ctx.textAlign='center';ctx.textBaseline='middle';
+          ctx.fillStyle=(w===q)?brass:pal[i%pal.length];
+          ctx.fillText(w,0,0);ctx.restore();
+          cloudHits.push({word:w,x:x0,y:y0,w:bw,h:bh});
+          placed=true;break;
+        }
+      }
+    }
+  });
+}
+function cloudHitAt(ev){
+  const r=cloudEl.getBoundingClientRect();
+  const x=ev.clientX-r.left, y=ev.clientY-r.top;
+  return cloudHits.find(h=>x>=h.x&&x<=h.x+h.w&&y>=h.y&&y<=h.y+h.h);
+}
+cloudEl.addEventListener('click',ev=>{
+  const h=cloudHitAt(ev);
+  if(h){qInput.value=qInput.value.trim().toLowerCase()===h.word?'':h.word;render();}
+});
+cloudEl.addEventListener('mousemove',ev=>{cloudEl.style.cursor=cloudHitAt(ev)?'pointer':'default';});
+let cloudRT;addEventListener('resize',()=>{clearTimeout(cloudRT);
+  cloudRT=setTimeout(()=>renderCloud(lastFiltered),150);});
+const qInput=document.getElementById('q');
+const countEl=document.getElementById('count');
+const emptyEl=document.getElementById('empty');
+const activeTags=new Set();
+
+// stats
+const tagFreq={};DATA.flatMap(d=>d.tags).forEach(t=>tagFreq[t]=(tagFreq[t]||0)+1);
+const allTags=Object.keys(tagFreq);
+// temas navegables en el filtro: los que aparecen en 2+ entrevistas, por frecuencia
+const filterTags=allTags.filter(t=>tagFreq[t]>=2)
+  .sort((a,b)=>tagFreq[b]-tagFreq[a]||a.localeCompare(b));
+document.getElementById('s-count').textContent=DATA.length;
+document.getElementById('s-quotes').textContent=DATA.reduce((n,d)=>n+d.quotes.length,0);
+document.getElementById('s-themes').textContent=allTags.length;
+
+// listbox multi-select
+const filterBtn=document.getElementById('filterBtn');
+const listbox=document.getElementById('listbox');
+const fbadge=document.getElementById('fbadge');
+listbox.innerHTML=`<div class="lb-hint">Temas presentes en 2+ entrevistas · el resto se
+  encuentra con el buscador</div>`+filterTags.map(t=>`
+  <div class="opt" role="option" aria-selected="false" data-t="${t}" tabindex="0">
+    <span class="box"></span><span class="opt-label">${t}</span>
+    <span class="opt-count">${tagFreq[t]}</span>
+  </div>`).join('')+`<button class="clear-opts" id="clearOpts">Limpiar selección</button>`;
+
+function syncListbox(){
+  listbox.querySelectorAll('.opt').forEach(o=>{
+    const on=activeTags.has(o.dataset.t);
+    o.setAttribute('aria-selected',on);o.classList.toggle('sel',on);
+  });
+  fbadge.hidden=activeTags.size===0;
+  fbadge.textContent=activeTags.size;
+  filterBtn.classList.toggle('active',activeTags.size>0);
+}
+function toggleTag(t){activeTags.has(t)?activeTags.delete(t):activeTags.add(t);syncListbox();render();}
+listbox.querySelectorAll('.opt').forEach(o=>{
+  o.onclick=()=>toggleTag(o.dataset.t);
+  o.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();toggleTag(o.dataset.t);}};
+});
+document.getElementById('clearOpts').onclick=()=>{activeTags.clear();syncListbox();render();};
+filterBtn.onclick=e=>{e.stopPropagation();const open=listbox.hidden;
+  listbox.hidden=!open;filterBtn.setAttribute('aria-expanded',open);};
+document.addEventListener('click',e=>{
+  if(!document.getElementById('filter').contains(e.target)){
+    listbox.hidden=true;filterBtn.setAttribute('aria-expanded','false');}
+});
+
+function cardHTML(d){
+  const tags=d.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+  return `<button class="card" data-id="${d.id}">
+    <div class="chead">
+      <div><h2 class="name">${d.name}</h2><p class="role">${d.role}</p></div>
+      <div class="figure">${d.figure}</div>
+    </div>
+    <p class="industry">${d.industry}</p>
+    <p class="quote">${d.quotes[0].replace(/^"|"$/g,'')}</p>
+    <div class="tags">${tags}</div>
+  </button>`;
+}
+
+function render(){
+  const q=qInput.value.trim().toLowerCase();
+  const res=DATA.filter(d=>{
+    if(activeTags.size && !d.tags.some(t=>activeTags.has(t))) return false;
+    if(!q) return true;
+    const hay=(d.name+' '+d.role+' '+d.industry+' '+d.tags.join(' ')+' '+
+      d.quotes.join(' ')+' '+d.transcript+' '+d.mentions.join(' ')).toLowerCase();
+    return hay.includes(q);
+  });
+  grid.innerHTML=res.map(cardHTML).join('');
+  renderCloud(res);
+  emptyEl.hidden=res.length>0;
+  countEl.textContent=`${res.length} de ${DATA.length}`;
+  [...grid.querySelectorAll('.card')].forEach(c=>c.onclick=()=>openModal(c.dataset.id));
+}
+
+function openModal(id){
+  const d=DATA.find(x=>x.id===id);
+  const quotes=d.quotes.map(q=>`<li>${q}</li>`).join('');
+  const tags=d.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+  const mentions=d.mentions.length?`<h3>Menciona a</h3><div class="tagrow">${
+    d.mentions.map(m=>`<span class="tag">${m}</span>`).join('')}</div>`:'';
+  document.getElementById('modal').innerHTML=`
+    <div class="mhead">
+      <div class="mtop">
+        <div><h2>${d.name}</h2><p class="role">${d.role}</p></div>
+        <button class="close" aria-label="Cerrar" onclick="closeModal()">×</button>
+      </div>
+      <div class="mmeta"><span class="figure">${d.figure}</span>
+        <span class="tag" style="padding:6px 9px">${d.industry}</span></div>
+    </div>
+    <div class="mbody">
+      <h3>Frases de oro</h3>
+      <ul class="qlist">${quotes}</ul>
+      <h3>Resumen</h3>
+      <p class="transcript">${d.transcript}</p>
+      <h3>Temas</h3><div class="tagrow">${tags}</div>
+      ${mentions}
+      <a class="iglink" href="https://www.instagram.com/p/${d.id}/" target="_blank" rel="noopener">
+        Ver el video original en Instagram →</a>
+    </div>`;
+  const ov=document.getElementById('overlay');
+  ov.classList.add('open');document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';}
+document.getElementById('overlay').onclick=e=>{if(e.target.id==='overlay')closeModal();};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+// theme toggle
+document.getElementById('theme').onclick=()=>{
+  const cur=document.documentElement.getAttribute('data-theme');
+  const isDark=cur?cur==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+  document.documentElement.setAttribute('data-theme',isDark?'light':'dark');
+  renderCloud(lastFiltered);
+};
+
+qInput.oninput=render;
+render();
+</script>

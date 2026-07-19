@@ -1,0 +1,12 @@
+# Netscape HTTP Cookie File
+# https://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
+
+.sssinstagram.com	TRUE	/	TRUE	1818934168	uid	9e26c1378829de94
+.sssinstagram.com	TRUE	/	TRUE	1786966167	errorFallbackPopup	81
+.sssinstagram.com	TRUE	/	TRUE	1786966167	adsForm	50
+.sssinstagram.com	TRUE	/	TRUE	1786966167	adsAfterSearch	13
+.sssinstagram.com	TRUE	/	TRUE	1786966167	adsPopupClick	40
+.sssinstagram.com	TRUE	/	TRUE	1786966167	exp_errorFallbackTZ_ab	tz
+.sssinstagram.com	TRUE	/	FALSE	1818934168	_ga	GA1.1.695354602.1784374168
+.sssinstagram.com	TRUE	/	FALSE	1818934177	_ga_KDHKH4GDQE	GS2.1.s1784374167$o1$g0$t1784374177$j50$l0$h0

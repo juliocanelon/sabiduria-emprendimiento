@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Descarga el audio de un reel/video de Instagram.
+# Uso:  descargar-video "URL_DEL_REEL"
+#
+# Usa el script y las cookies que estan en esta misma carpeta,
+# sin importar desde donde lo ejecutes.
+
+if [ -z "$1" ]; then
+    echo 'Uso: descargar-video "URL_DEL_REEL"'
+    exit 1
+fi
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+python "$DIR/descargar_video.py" "$1" --cookies-archivo "$DIR/www.instagram.com_cookies.txt"
