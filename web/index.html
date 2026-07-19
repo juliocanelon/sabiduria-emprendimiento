@@ -201,6 +201,20 @@
   .iglink:hover{background:var(--brass-wash)}
   .tagrow{display:flex;gap:6px;flex-wrap:wrap}
 
+  /* Modal nav */
+  .mpos{background:var(--panel);color:var(--muted);padding:7px 12px;border-radius:9px;
+    font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums}
+  .mnav{display:flex;gap:10px;align-items:center;padding:14px 30px;
+    border-top:1px solid var(--line-soft);background:var(--panel)}
+  .navbtn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;
+    padding:11px 12px;cursor:pointer;font-size:13.5px;font-weight:600;font-family:var(--sans);
+    white-space:nowrap;transition:.15s}
+  .navbtn:hover{border-color:var(--brass);color:var(--brass)}
+  .navrand{flex:none;background:var(--brass-wash);border-color:transparent;color:var(--accent-strong)}
+  .navrand:hover{color:var(--accent-strong);filter:brightness(.97)}
+  @media (max-width:480px){.navbtn{padding:10px 8px;font-size:12.5px}}
+
   .themebtn{border:1px solid var(--hero-line);background:rgba(255,255,255,.06);color:var(--hero-ink);
     border-radius:10px;width:38px;height:38px;cursor:pointer;font-size:16px;flex:none}
   .themebtn:hover{border-color:var(--hero-eyebrow)}
@@ -2320,8 +2334,14 @@ function render(){
   [...grid.querySelectorAll('.card')].forEach(c=>c.onclick=()=>openModal(c.dataset.id));
 }
 
+let modalId=null;
+function navList(){ return (lastFiltered&&lastFiltered.length)?lastFiltered:DATA; }
 function openModal(id){
+  modalId=id;
   const d=DATA.find(x=>x.id===id);
+  const list=navList();
+  const pos=list.findIndex(x=>x.id===id);
+  const posLabel=pos>=0?`${pos+1} / ${list.length}`:'';
   const quotes=d.quotes.map(q=>`<li>${q}</li>`).join('');
   const tags=d.tags.map(t=>`<span class="tag">${t}</span>`).join('');
   const mentions=d.mentions.length?`<h3>Menciona a</h3><div class="tagrow">${
@@ -2333,7 +2353,8 @@ function openModal(id){
         <button class="close" aria-label="Cerrar" onclick="closeModal()">×</button>
       </div>
       <div class="mmeta"><span class="figure">${d.figure}</span>
-        <span class="tag" style="padding:6px 9px">${d.industry}</span></div>
+        <span class="tag" style="padding:6px 9px">${d.industry}</span>
+        ${posLabel?`<span class="mpos">${posLabel}</span>`:''}</div>
     </div>
     <div class="mbody">
       <h3>Frases de oro</h3>
@@ -2344,14 +2365,37 @@ function openModal(id){
       ${mentions}
       <a class="iglink" href="https://www.instagram.com/p/${d.id}/" target="_blank" rel="noopener">
         Ver el video original en Instagram →</a>
+    </div>
+    <div class="mnav">
+      <button class="navbtn" onclick="navBy(-1)" title="Anterior (←)">← Anterior</button>
+      <button class="navbtn navrand" onclick="navRandom()" title="Aleatoria">🎲 Aleatoria</button>
+      <button class="navbtn" onclick="navBy(1)" title="Siguiente (→)">Siguiente →</button>
     </div>`;
   const ov=document.getElementById('overlay');
   ov.classList.add('open');document.body.style.overflow='hidden';
+  const mb=document.querySelector('.mbody'); if(mb) mb.scrollTop=0;
 }
-function closeModal(){document.getElementById('overlay').classList.remove('open');
+function navBy(delta){
+  const list=navList(); const i=list.findIndex(x=>x.id===modalId);
+  if(i<0){ if(list.length) openModal(list[0].id); return; }
+  openModal(list[(i+delta+list.length)%list.length].id);
+}
+function navRandom(){
+  const list=navList(); if(!list.length) return;
+  if(list.length===1){ openModal(list[0].id); return; }
+  let n; do{ n=Math.floor(Math.random()*list.length); }while(list[n].id===modalId);
+  openModal(list[n].id);
+}
+function closeModal(){modalId=null;document.getElementById('overlay').classList.remove('open');
   document.body.style.overflow='';}
 document.getElementById('overlay').onclick=e=>{if(e.target.id==='overlay')closeModal();};
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.addEventListener('keydown',e=>{
+  const open=document.getElementById('overlay').classList.contains('open');
+  if(e.key==='Escape'){ closeModal(); return; }
+  if(!open) return;
+  if(e.key==='ArrowLeft') navBy(-1);
+  else if(e.key==='ArrowRight') navBy(1);
+});
 
 // theme toggle
 document.getElementById('theme').onclick=()=>{
